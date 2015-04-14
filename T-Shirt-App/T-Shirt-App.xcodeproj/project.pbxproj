@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04CDA112EC1CCE4688FE4F6E /* libPods-T-Shirt-App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CED94805D2F7757D7AACD899 /* libPods-T-Shirt-App.a */; };
 		149909841ADD742800A810E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149909831ADD742800A810E6 /* AppDelegate.swift */; };
 		149909861ADD742800A810E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149909851ADD742800A810E6 /* ViewController.swift */; };
 		149909891ADD742800A810E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 149909871ADD742800A810E6 /* Main.storyboard */; };
@@ -38,6 +39,9 @@
 		149909981ADD742800A810E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		149909991ADD742800A810E6 /* T_Shirt_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T_Shirt_AppTests.swift; sourceTree = "<group>"; };
 		1AA530A31ADD754800333F6D /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		81B3F550B20BC60BAD2788B2 /* Pods-T-Shirt-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-T-Shirt-App.release.xcconfig"; path = "Pods/Target Support Files/Pods-T-Shirt-App/Pods-T-Shirt-App.release.xcconfig"; sourceTree = "<group>"; };
+		9F066659BF6A1804B6E8E528 /* Pods-T-Shirt-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-T-Shirt-App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-T-Shirt-App/Pods-T-Shirt-App.debug.xcconfig"; sourceTree = "<group>"; };
+		CED94805D2F7757D7AACD899 /* libPods-T-Shirt-App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-T-Shirt-App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04CDA112EC1CCE4688FE4F6E /* libPods-T-Shirt-App.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +70,8 @@
 				149909801ADD742800A810E6 /* T-Shirt-App */,
 				149909961ADD742800A810E6 /* T-Shirt-AppTests */,
 				1499097F1ADD742800A810E6 /* Products */,
+				8AE3B9F7C9F49641695F7603 /* Pods */,
+				CE7DE95685FDF4540A75A435 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,6 +122,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		8AE3B9F7C9F49641695F7603 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9F066659BF6A1804B6E8E528 /* Pods-T-Shirt-App.debug.xcconfig */,
+				81B3F550B20BC60BAD2788B2 /* Pods-T-Shirt-App.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CE7DE95685FDF4540A75A435 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CED94805D2F7757D7AACD899 /* libPods-T-Shirt-App.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,9 +146,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1499099D1ADD742800A810E6 /* Build configuration list for PBXNativeTarget "T-Shirt-App" */;
 			buildPhases = (
+				B01F1BA5362C63FC2C03FBD9 /* Check Pods Manifest.lock */,
 				1499097A1ADD742800A810E6 /* Sources */,
 				1499097B1ADD742800A810E6 /* Frameworks */,
 				1499097C1ADD742800A810E6 /* Resources */,
+				EA79AC7DD3AF82FEA537735A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -210,6 +236,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B01F1BA5362C63FC2C03FBD9 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EA79AC7DD3AF82FEA537735A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-T-Shirt-App/Pods-T-Shirt-App-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1499097A1ADD742800A810E6 /* Sources */ = {
@@ -340,6 +399,7 @@
 		};
 		1499099E1ADD742800A810E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F066659BF6A1804B6E8E528 /* Pods-T-Shirt-App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "T-Shirt-App/Info.plist";
@@ -350,6 +410,7 @@
 		};
 		1499099F1ADD742800A810E6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81B3F550B20BC60BAD2788B2 /* Pods-T-Shirt-App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "T-Shirt-App/Info.plist";

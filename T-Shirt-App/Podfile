@@ -1,0 +1,10 @@
+# Uncomment this line to define a global platform for your project
+# platform :ios, '6.0'
+
+target 'T-Shirt-App' do
+  pod 'PayMillSDK', :git=>'https://github.com/paymill/paymill-ios.git', :branch=>'master', :tag=>'2.2.0'
+end
+
+target 'T-Shirt-AppTests' do
+
+end

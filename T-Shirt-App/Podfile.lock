@@ -1,0 +1,23 @@
+PODS:
+  - PayMillSDK (2.2.0)
+
+DEPENDENCIES:
+  - PayMillSDK (from `https://github.com/paymill/paymill-ios.git`, branch `master`,
+    tag `2.2.0`)
+
+EXTERNAL SOURCES:
+  PayMillSDK:
+    :branch: master
+    :git: https://github.com/paymill/paymill-ios.git
+    :tag: 2.2.0
+
+CHECKOUT OPTIONS:
+  PayMillSDK:
+    :branch: master
+    :git: https://github.com/paymill/paymill-ios.git
+    :tag: 2.2.0
+
+SPEC CHECKSUMS:
+  PayMillSDK: a42ed22e824d594d42c0af9c4b9ad168c66427df
+
+COCOAPODS: 0.36.3
