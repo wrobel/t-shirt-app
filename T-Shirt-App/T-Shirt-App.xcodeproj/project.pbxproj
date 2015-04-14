@@ -14,6 +14,7 @@
 		1499098E1ADD742800A810E6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1499098C1ADD742800A810E6 /* LaunchScreen.xib */; };
 		1499099A1ADD742800A810E6 /* T_Shirt_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149909991ADD742800A810E6 /* T_Shirt_AppTests.swift */; };
 		1AA530A41ADD754800333F6D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 1AA530A31ADD754800333F6D /* .gitignore */; };
+		202EE1DE47A26464F0B14D91 /* libPods-T-Shirt-App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CED94805D2F7757D7AACD899 /* libPods-T-Shirt-App.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				202EE1DE47A26464F0B14D91 /* libPods-T-Shirt-App.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
