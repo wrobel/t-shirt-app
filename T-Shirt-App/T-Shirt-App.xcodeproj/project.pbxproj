@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04CDA112EC1CCE4688FE4F6E /* libPods-T-Shirt-App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CED94805D2F7757D7AACD899 /* libPods-T-Shirt-App.a */; };
 		149909841ADD742800A810E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149909831ADD742800A810E6 /* AppDelegate.swift */; };
 		149909861ADD742800A810E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149909851ADD742800A810E6 /* ViewController.swift */; };
 		149909891ADD742800A810E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 149909871ADD742800A810E6 /* Main.storyboard */; };
@@ -49,7 +48,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04CDA112EC1CCE4688FE4F6E /* libPods-T-Shirt-App.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
