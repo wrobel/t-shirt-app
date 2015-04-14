@@ -4,5 +4,5 @@ A simple app for uploading t-shirts with *automagic* vectorization and payment i
 
 ## Installation
 
-`$ git clone https://github.com/wrobel/t-shirt-app.git`
-`$ pod install`  
+- `$ git clone https://github.com/wrobel/t-shirt-app.git`
+- `$ pod install`  
