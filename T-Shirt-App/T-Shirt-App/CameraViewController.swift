@@ -15,6 +15,10 @@ class CameraViewController: UIViewController,
     
     @IBOutlet var takePictureButton:UIButton!
     
+    @IBOutlet var uploadButton:UIButton!
+
+    var image:UIImage?
+    
     @IBAction func shootPicture(sender: UIButton) {
         // This should be UIImagePickerControllerSourceType.Camera but does not work with simulator
         // Leave on PhotoLibrary until testing for real
@@ -30,15 +34,43 @@ class CameraViewController: UIViewController,
         let picker = UIImagePickerController()
         picker.mediaTypes = mediaTypes
         picker.delegate = self
-        picker.allowsEditing = false
+        picker.allowsEditing = true
         picker.sourceType = sourceType
         presentViewController(picker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController!, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]!) {
+        image = info[UIImagePickerControllerEditedImage] as? UIImage
+        picker.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        picker.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func updateDisplay() {
+        if (image != nil) {
+            imageView.image = image!
+            imageView.hidden = false
+            uploadButton.hidden = false
+        } else {
+            imageView.hidden = true
+            uploadButton.hidden = true
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if !UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
+            takePictureButton.hidden = true
+        }
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        updateDisplay()
     }
 
     override func didReceiveMemoryWarning() {

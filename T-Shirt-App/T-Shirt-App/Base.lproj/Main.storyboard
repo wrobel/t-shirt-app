@@ -92,6 +92,11 @@
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="imageView" destination="wGP-pp-mzc" id="HzC-ws-nMv"/>
+                        <outlet property="takePictureButton" destination="1FG-V8-jBx" id="2JG-7C-Vpk"/>
+                        <outlet property="uploadButton" destination="TxO-Y2-MKm" id="uZN-AZ-Zl7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g9x-EE-xNK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
