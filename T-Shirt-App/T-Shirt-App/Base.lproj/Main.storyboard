@@ -70,7 +70,6 @@
                             <constraint firstItem="aWG-J4-pIe" firstAttribute="bottom" secondItem="TxO-Y2-MKm" secondAttribute="top" constant="-20" id="Ajb-Pd-lAg"/>
                             <constraint firstItem="N12-8e-SVI" firstAttribute="width" secondItem="X0L-aU-fRV" secondAttribute="width" id="DXl-iL-yoR"/>
                             <constraint firstAttribute="centerX" secondItem="N12-8e-SVI" secondAttribute="centerX" id="G7m-cw-fXV"/>
-                            <constraint firstItem="N12-8e-SVI" firstAttribute="top" secondItem="JSQ-p1-I6n" secondAttribute="top" id="IFQ-YC-7eg"/>
                             <constraint firstAttribute="centerX" secondItem="TxO-Y2-MKm" secondAttribute="centerX" id="KfB-Dc-UIJ"/>
                             <constraint firstItem="o4V-kJ-hGy" firstAttribute="top" secondItem="wGP-pp-mzc" secondAttribute="bottom" constant="160" id="MxH-19-gKp"/>
                             <constraint firstItem="aWG-J4-pIe" firstAttribute="centerX" secondItem="X0L-aU-fRV" secondAttribute="centerX" id="Xsu-cK-f1e"/>
@@ -82,6 +81,7 @@
                             <constraint firstItem="wGP-pp-mzc" firstAttribute="width" secondItem="X0L-aU-fRV" secondAttribute="width" id="ty1-Ya-C4j"/>
                             <constraint firstItem="1FG-V8-jBx" firstAttribute="bottom" secondItem="aWG-J4-pIe" secondAttribute="top" constant="-20" id="u2J-Yu-6Rl"/>
                             <constraint firstItem="wGP-pp-mzc" firstAttribute="top" secondItem="N12-8e-SVI" secondAttribute="bottom" constant="20" id="wS7-R8-0F0"/>
+                            <constraint firstItem="N12-8e-SVI" firstAttribute="top" secondItem="JSQ-p1-I6n" secondAttribute="bottom" id="yOJ-7v-ge5"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
