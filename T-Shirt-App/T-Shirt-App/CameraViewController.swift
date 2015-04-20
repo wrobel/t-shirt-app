@@ -21,6 +21,10 @@ class CameraViewController: UIViewController,
         pickMediaFromSource(UIImagePickerControllerSourceType.PhotoLibrary)
     }
     
+    @IBAction func selectImageFromLibrary(sender: UIButton) {
+        pickMediaFromSource(UIImagePickerControllerSourceType.PhotoLibrary)
+    }
+    
     func pickMediaFromSource(sourceType: UIImagePickerControllerSourceType) {
         let mediaTypes = UIImagePickerController.availableMediaTypesForSourceType(sourceType)!
         let picker = UIImagePickerController()

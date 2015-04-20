@@ -8,7 +8,7 @@
         <!--Camera View Controller-->
         <scene sceneID="woA-u7-vR0">
             <objects>
-                <viewController id="lbd-sc-RB4" userLabel="Camera View Controller" sceneMemberID="viewController">
+                <viewController id="lbd-sc-RB4" userLabel="Camera View Controller" customClass="CameraViewController" customModule="T_Shirt_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JSQ-p1-I6n"/>
                         <viewControllerLayoutGuide type="bottom" id="o4V-kJ-hGy"/>
@@ -53,9 +53,12 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="selectImageFromLibrary:" destination="lbd-sc-RB4" eventType="touchUpInside" id="H3b-3u-jaU"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1FG-V8-jBx">
-                                <rect key="frame" x="125" y="586" width="164" height="30"/>
+                                <rect key="frame" x="0.0" y="586" width="414" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="iJa-Z3-KAM"/>
                                 </constraints>
@@ -63,6 +66,9 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="shootPicture:" destination="lbd-sc-RB4" eventType="touchUpInside" id="yIX-wG-gMh"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -72,6 +78,7 @@
                             <constraint firstAttribute="centerX" secondItem="N12-8e-SVI" secondAttribute="centerX" id="G7m-cw-fXV"/>
                             <constraint firstAttribute="centerX" secondItem="TxO-Y2-MKm" secondAttribute="centerX" id="KfB-Dc-UIJ"/>
                             <constraint firstItem="o4V-kJ-hGy" firstAttribute="top" secondItem="wGP-pp-mzc" secondAttribute="bottom" constant="160" id="MxH-19-gKp"/>
+                            <constraint firstAttribute="width" secondItem="1FG-V8-jBx" secondAttribute="width" id="WM5-1a-emk"/>
                             <constraint firstItem="aWG-J4-pIe" firstAttribute="centerX" secondItem="X0L-aU-fRV" secondAttribute="centerX" id="Xsu-cK-f1e"/>
                             <constraint firstItem="wGP-pp-mzc" firstAttribute="centerX" secondItem="TxO-Y2-MKm" secondAttribute="centerX" id="abm-2s-yEI"/>
                             <constraint firstItem="aWG-J4-pIe" firstAttribute="width" secondItem="X0L-aU-fRV" secondAttribute="width" id="g5n-4t-jaD"/>

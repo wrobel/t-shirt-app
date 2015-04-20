@@ -15,6 +15,7 @@
 		1499099A1ADD742800A810E6 /* T_Shirt_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149909991ADD742800A810E6 /* T_Shirt_AppTests.swift */; };
 		1AA530A41ADD754800333F6D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 1AA530A31ADD754800333F6D /* .gitignore */; };
 		202EE1DE47A26464F0B14D91 /* libPods-T-Shirt-App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CED94805D2F7757D7AACD899 /* libPods-T-Shirt-App.a */; };
+		14C700D41ADD7B7500E6C578 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C700D31ADD7B7500E6C578 /* CameraViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		81B3F550B20BC60BAD2788B2 /* Pods-T-Shirt-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-T-Shirt-App.release.xcconfig"; path = "Pods/Target Support Files/Pods-T-Shirt-App/Pods-T-Shirt-App.release.xcconfig"; sourceTree = "<group>"; };
 		9F066659BF6A1804B6E8E528 /* Pods-T-Shirt-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-T-Shirt-App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-T-Shirt-App/Pods-T-Shirt-App.debug.xcconfig"; sourceTree = "<group>"; };
 		CED94805D2F7757D7AACD899 /* libPods-T-Shirt-App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-T-Shirt-App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		14C700D31ADD7B7500E6C578 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				149909831ADD742800A810E6 /* AppDelegate.swift */,
 				149909851ADD742800A810E6 /* ViewController.swift */,
 				149909871ADD742800A810E6 /* Main.storyboard */,
+				14C700D31ADD7B7500E6C578 /* CameraViewController.swift */,
 				1499098A1ADD742800A810E6 /* Images.xcassets */,
 				1499098C1ADD742800A810E6 /* LaunchScreen.xib */,
 				149909811ADD742800A810E6 /* Supporting Files */,
@@ -277,6 +280,7 @@
 			files = (
 				149909861ADD742800A810E6 /* ViewController.swift in Sources */,
 				149909841ADD742800A810E6 /* AppDelegate.swift in Sources */,
+				14C700D41ADD7B7500E6C578 /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
