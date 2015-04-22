@@ -103,10 +103,10 @@
             </objects>
             <point key="canvasLocation" x="-1410" y="-238"/>
         </scene>
-        <!--Title-->
+        <!--Upload-->
         <scene sceneID="ptX-9P-xlX">
             <objects>
-                <viewController id="XBu-3g-zRN" sceneMemberID="viewController">
+                <viewController id="XBu-3g-zRN" userLabel="Upload" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xMR-NT-Xh0"/>
                         <viewControllerLayoutGuide type="bottom" id="lLk-by-tIh"/>
@@ -116,7 +116,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BPg-fx-ny9">
-                                <rect key="frame" x="16" y="686" width="382" height="30"/>
+                                <rect key="frame" x="0.0" y="686" width="414" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="KU4-GC-8CG"/>
+                                </constraints>
                                 <state key="normal" title="Vektorisieren...">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
@@ -124,14 +127,21 @@
                                     <segue destination="36v-3H-2sG" kind="show" id="ftK-a8-wqt"/>
                                 </connections>
                             </button>
-                            <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9fX-Kx-uXa">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9fX-Kx-uXa" userLabel="Navigation Bar - Upload">
+                                <rect key="frame" x="0.0" y="20" width="414" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="n8U-a6-JUV"/>
+                                </constraints>
                                 <items>
                                     <navigationItem title="Upload" id="Zzp-ik-Ejg"/>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ihre Zeichnung wird vektorisiert. Der Vorgang kann bis zu zwei Tagen dauern." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IbI-70-AQj">
-                                <rect key="frame" x="68" y="331" width="278" height="117"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ihre Zeichnung wird vektorisiert. Der Vorgang kann bis zu zwei Tagen dauern." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IbI-70-AQj">
+                                <rect key="frame" x="68" y="310" width="278" height="117"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="117" id="PTx-un-c0Y"/>
+                                    <constraint firstAttribute="width" constant="278" id="cJX-OV-ufC"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -139,11 +149,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="BPg-fx-ny9" firstAttribute="trailing" secondItem="WLA-OL-146" secondAttribute="trailingMargin" id="6yA-3X-yLe"/>
+                            <constraint firstAttribute="centerX" secondItem="IbI-70-AQj" secondAttribute="centerX" id="1Wi-Ax-saG"/>
+                            <constraint firstAttribute="centerX" secondItem="9fX-Kx-uXa" secondAttribute="centerX" id="8c3-Ez-2sZ"/>
                             <constraint firstItem="lLk-by-tIh" firstAttribute="top" secondItem="BPg-fx-ny9" secondAttribute="bottom" constant="20" id="BVS-zC-Fqa"/>
-                            <constraint firstItem="BPg-fx-ny9" firstAttribute="leading" secondItem="WLA-OL-146" secondAttribute="leadingMargin" id="Nzc-ZU-OwW"/>
+                            <constraint firstAttribute="centerX" secondItem="BPg-fx-ny9" secondAttribute="centerX" id="ClE-mM-xu4"/>
                             <constraint firstAttribute="width" secondItem="9fX-Kx-uXa" secondAttribute="width" id="Po1-QR-NxM"/>
+                            <constraint firstAttribute="centerY" secondItem="IbI-70-AQj" secondAttribute="centerY" id="p2T-6N-CRk"/>
                             <constraint firstItem="9fX-Kx-uXa" firstAttribute="top" secondItem="xMR-NT-Xh0" secondAttribute="bottom" id="qq6-UY-GUI"/>
+                            <constraint firstAttribute="width" secondItem="BPg-fx-ny9" secondAttribute="width" id="tkA-I8-ePL"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="PR0-8m-xaE"/>
