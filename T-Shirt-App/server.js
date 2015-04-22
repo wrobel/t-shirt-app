@@ -13,8 +13,8 @@ function guid() {
     s4() + '-' + s4() + s4() + s4();
 }
 
-fs.mkdir('incoming');
-fs.mkdir('outgoing');
+fs.mkdir('incoming', function() {});
+fs.mkdir('outgoing', function() {});
 
 http.createServer(function(request, response) {
   if (request.method === 'POST') {
@@ -31,8 +31,8 @@ http.createServer(function(request, response) {
     response.end();
   } else if (request.method === 'get') {
     var guidPath = url.parse(request.url).pathname,
-        guid = path.normalize(guidPath).split('/')[0],
-        imagePath = 'outgoing/' + guid + '.png';
+        guidSegment = path.normalize(guidPath).split('/')[0],
+        imagePath = 'outgoing/' + guidSegment + '.png';
     fs.stat(imagePath, 'r', function(err, stats) {
       if (err) {
         response.writeHead(404);
