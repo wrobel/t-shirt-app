@@ -19,6 +19,18 @@ class CameraViewController: UIViewController,
 
     var image:UIImage?
     
+    var queueId:String = ""
+  
+    func dataFilePath() -> String {
+        let paths = NSSearchPathForDirectoriesInDomains(
+            NSSearchPathDirectory.DocumentDirectory,
+            NSSearchPathDomainMask.UserDomainMask,
+            true
+        )
+        let documentsDirectory = paths[0] as NSString
+        return documentsDirectory.stringByAppendingPathComponent("queue.plist") as String
+    }
+    
     @IBAction func shootPicture(sender: UIButton) {
         // This should be UIImagePickerControllerSourceType.Camera but does not work with simulator
         // Leave on PhotoLibrary until testing for real
@@ -59,12 +71,28 @@ class CameraViewController: UIViewController,
         }
     }
     
+    
+    
     @IBAction func uploadImage(sender: UIButton) {
         var request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:8000")!)
         request.HTTPMethod = "POST"
         var session = NSURLSession.sharedSession();
         var imageData = UIImagePNGRepresentation(image);
-        var task = session.uploadTaskWithRequest(request, fromData: imageData)
+        var task = session.uploadTaskWithRequest(request, fromData: imageData, completionHandler:{
+            (data: NSData!,
+             response: NSURLResponse!,
+             error: NSError!) in
+                if (error != nil) {
+                    println(error.localizedDescription)
+                } else {
+                    let httpResponse = response as NSHTTPURLResponse
+                    let location = httpResponse.allHeaderFields["Location"] as String
+                    location.writeToFile(self.dataFilePath(), atomically: true, encoding: NSUTF8StringEncoding)
+                    println("Stored: " + location)
+                }
+            }
+        )
+        
         task.resume()
     }
     
@@ -74,7 +102,12 @@ class CameraViewController: UIViewController,
         if !UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
             takePictureButton.hidden = true
         }
-        // Do any additional setup after loading the view.
+                
+        let filePath = self.dataFilePath()
+        if (NSFileManager.defaultManager().fileExistsAtPath(filePath)) {
+            queueId = String(contentsOfFile: filePath, encoding: NSUTF8StringEncoding, error: nil)!
+            println("Loaded: " + queueId)
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
