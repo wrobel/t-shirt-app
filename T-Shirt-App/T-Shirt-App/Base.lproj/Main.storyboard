@@ -130,6 +130,12 @@
                                     <navigationItem title="Upload" id="Zzp-ik-Ejg"/>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ihre Zeichnung wird vektorisiert. Der Vorgang kann bis zu zwei Tagen dauern." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IbI-70-AQj">
+                                <rect key="frame" x="68" y="331" width="278" height="117"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -171,7 +177,7 @@
                             <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fNO-5a-oSm">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <items>
-                                    <navigationItem title="Verarbeitung" id="uJn-5V-n7y"/>
+                                    <navigationItem title="Verarbeitete Zeichnung" id="uJn-5V-n7y"/>
                                 </items>
                             </navigationBar>
                         </subviews>
