@@ -59,6 +59,15 @@ class CameraViewController: UIViewController,
         }
     }
     
+    @IBAction func uploadImage(sender: UIButton) {
+        var request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:8000")!)
+        request.HTTPMethod = "POST"
+        var session = NSURLSession.sharedSession();
+        var imageData = UIImagePNGRepresentation(image);
+        var task = session.uploadTaskWithRequest(request, fromData: imageData)
+        task.resume()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

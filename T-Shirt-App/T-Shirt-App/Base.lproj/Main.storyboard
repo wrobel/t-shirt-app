@@ -26,6 +26,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
+                                    <action selector="uploadImage:" destination="lbd-sc-RB4" eventType="touchUpInside" id="5z5-nO-foE"/>
                                     <segue destination="XBu-3g-zRN" kind="popoverPresentation" popoverAnchorView="TxO-Y2-MKm" id="ZiD-38-dWv">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                     </segue>
