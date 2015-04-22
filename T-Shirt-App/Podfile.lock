@@ -1,7 +1,9 @@
 PODS:
+  - CardIO (5.0.4)
   - PayMillSDK (2.2.0)
 
 DEPENDENCIES:
+  - CardIO
   - PayMillSDK (from `https://github.com/paymill/paymill-ios.git`, branch `master`,
     tag `2.2.0`)
 
@@ -18,6 +20,7 @@ CHECKOUT OPTIONS:
     :tag: 2.2.0
 
 SPEC CHECKSUMS:
+  CardIO: d9240efad9237ff668ff0c2e17de28369cab18c8
   PayMillSDK: a42ed22e824d594d42c0af9c4b9ad168c66427df
 
 COCOAPODS: 0.36.4
