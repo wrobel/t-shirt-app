@@ -11,6 +11,10 @@ import UIKit
 class CameraViewController: UIViewController,
         UIImagePickerControllerDelegate,UINavigationControllerDelegate{
 
+    private var jobQueue: JobQueue!
+
+    private var queueId: String?
+
     @IBOutlet var imageView:UIImageView!
     
     @IBOutlet var takePictureButton:UIButton!
@@ -18,18 +22,6 @@ class CameraViewController: UIViewController,
     @IBOutlet var uploadButton:UIButton!
 
     var image:UIImage?
-    
-    var queueId:String = ""
-  
-    func dataFilePath() -> String {
-        let paths = NSSearchPathForDirectoriesInDomains(
-            NSSearchPathDirectory.DocumentDirectory,
-            NSSearchPathDomainMask.UserDomainMask,
-            true
-        )
-        let documentsDirectory = paths[0] as NSString
-        return documentsDirectory.stringByAppendingPathComponent("queue.plist") as String
-    }
     
     @IBAction func shootPicture(sender: UIButton) {
         // This should be UIImagePickerControllerSourceType.Camera but does not work with simulator
@@ -71,8 +63,6 @@ class CameraViewController: UIViewController,
         }
     }
     
-    
-    
     @IBAction func uploadImage(sender: UIButton) {
         var request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:8000")!)
         request.HTTPMethod = "POST"
@@ -87,8 +77,7 @@ class CameraViewController: UIViewController,
                 } else {
                     let httpResponse = response as NSHTTPURLResponse
                     let location = httpResponse.allHeaderFields["Location"] as String
-                    location.writeToFile(self.dataFilePath(), atomically: true, encoding: NSUTF8StringEncoding)
-                    println("Stored: " + location)
+                    self.jobQueue.storeNewJob(location)
                 }
             }
         )
@@ -102,12 +91,9 @@ class CameraViewController: UIViewController,
         if !UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
             takePictureButton.hidden = true
         }
-                
-        let filePath = self.dataFilePath()
-        if (NSFileManager.defaultManager().fileExistsAtPath(filePath)) {
-            queueId = String(contentsOfFile: filePath, encoding: NSUTF8StringEncoding, error: nil)!
-            println("Loaded: " + queueId)
-        }
+        
+        jobQueue = JobQueue()
+        queueId = jobQueue.loadActiveJob()
     }
     
     override func viewDidAppear(animated: Bool) {

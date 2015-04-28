@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14796AD81AEF4A8D00B8E7F4 /* JobQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14796AD71AEF4A8D00B8E7F4 /* JobQueue.swift */; };
 		149909841ADD742800A810E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149909831ADD742800A810E6 /* AppDelegate.swift */; };
 		149909861ADD742800A810E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149909851ADD742800A810E6 /* ViewController.swift */; };
 		149909891ADD742800A810E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 149909871ADD742800A810E6 /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		14796AD71AEF4A8D00B8E7F4 /* JobQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobQueue.swift; sourceTree = "<group>"; };
 		1499097E1ADD742800A810E6 /* T-Shirt-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "T-Shirt-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		149909821ADD742800A810E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		149909831ADD742800A810E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				149909851ADD742800A810E6 /* ViewController.swift */,
 				149909871ADD742800A810E6 /* Main.storyboard */,
 				14C700D31ADD7B7500E6C578 /* CameraViewController.swift */,
+				14796AD71AEF4A8D00B8E7F4 /* JobQueue.swift */,
 				1499098A1ADD742800A810E6 /* Images.xcassets */,
 				1499098C1ADD742800A810E6 /* LaunchScreen.xib */,
 				149909811ADD742800A810E6 /* Supporting Files */,
@@ -283,6 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14796AD81AEF4A8D00B8E7F4 /* JobQueue.swift in Sources */,
 				1A914EAD1AE815B300CA17A2 /* PaymentViewController.swift in Sources */,
 				149909861ADD742800A810E6 /* ViewController.swift in Sources */,
 				149909841ADD742800A810E6 /* AppDelegate.swift in Sources */,
