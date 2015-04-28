@@ -11,10 +11,8 @@ import UIKit
 class CameraViewController: UIViewController,
         UIImagePickerControllerDelegate,UINavigationControllerDelegate{
 
-    private var jobQueue: JobQueue!
-
-    private var queueId: String?
-
+    var jobUpload: JobUpload!
+    
     @IBOutlet var imageView:UIImageView!
     
     @IBOutlet var takePictureButton:UIButton!
@@ -64,25 +62,9 @@ class CameraViewController: UIViewController,
     }
     
     @IBAction func uploadImage(sender: UIButton) {
-        var request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:8000")!)
-        request.HTTPMethod = "POST"
-        var session = NSURLSession.sharedSession();
-        var imageData = UIImagePNGRepresentation(image);
-        var task = session.uploadTaskWithRequest(request, fromData: imageData, completionHandler:{
-            (data: NSData!,
-             response: NSURLResponse!,
-             error: NSError!) in
-                if (error != nil) {
-                    println(error.localizedDescription)
-                } else {
-                    let httpResponse = response as NSHTTPURLResponse
-                    let location = httpResponse.allHeaderFields["Location"] as String
-                    self.jobQueue.storeNewJob(location)
-                }
-            }
-        )
-        
-        task.resume()
+        if image != nil {
+            jobUpload.uploadJob(image!)
+        }
     }
     
     override func viewDidLoad() {
@@ -91,9 +73,6 @@ class CameraViewController: UIViewController,
         if !UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
             takePictureButton.hidden = true
         }
-        
-        jobQueue = JobQueue()
-        queueId = jobQueue.loadActiveJob()
     }
     
     override func viewDidAppear(animated: Bool) {
