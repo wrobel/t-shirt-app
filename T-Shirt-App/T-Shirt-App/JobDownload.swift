@@ -26,6 +26,8 @@ class JobDownload {
             error: NSError!) in
             if (error != nil) {
                 println(error.localizedDescription)
+            } else if data.length == 0 {
+                println("No result yet")
             } else {
                 self.jobDownloadedDelegate.jobDownloaded(UIImage(data: data)!)
             }
