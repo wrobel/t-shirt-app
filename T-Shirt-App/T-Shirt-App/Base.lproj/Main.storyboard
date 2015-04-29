@@ -206,24 +206,80 @@
                                     <constraint firstAttribute="height" constant="371" id="2of-8q-J4R"/>
                                 </constraints>
                             </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xfP-no-Ii1">
+                                <rect key="frame" x="98" y="638" width="300" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="Xzz-0y-R2a"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="S"/>
+                                    <segment title="M"/>
+                                    <segment title="L"/>
+                                    <segment title="XL"/>
+                                </segments>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Xzz-0y-R2a"/>
+                                    </mask>
+                                </variation>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oyj-Y6-4ii">
+                                <rect key="frame" x="98" y="590" width="300" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="UoC-kA-tmJ"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Weiblich"/>
+                                    <segment title="Männlich"/>
+                                </segments>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="UoC-kA-tmJ"/>
+                                    </mask>
+                                </variation>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Größe" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vea-vW-QVA">
+                                <rect key="frame" x="32" y="641" width="48" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Form" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tP-9X-4NN">
+                                <rect key="frame" x="40" y="597" width="40" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="2tP-9X-4NN" firstAttribute="leading" secondItem="fli-6u-tkz" secondAttribute="leadingMargin" constant="24" id="0RI-el-VI9"/>
                             <constraint firstItem="fNO-5a-oSm" firstAttribute="top" secondItem="MYU-iR-rhz" secondAttribute="bottom" id="2C7-dz-kJV"/>
+                            <constraint firstItem="fcH-jU-gOm" firstAttribute="top" secondItem="xfP-no-Ii1" secondAttribute="bottom" constant="20" id="2ZN-x3-UxE"/>
+                            <constraint firstItem="oyj-Y6-4ii" firstAttribute="leading" secondItem="2tP-9X-4NN" secondAttribute="trailing" constant="18" id="5EN-e1-5wh"/>
                             <constraint firstAttribute="width" secondItem="fNO-5a-oSm" secondAttribute="width" id="9C7-S4-6g4"/>
                             <constraint firstAttribute="centerX" secondItem="fNO-5a-oSm" secondAttribute="centerX" id="AZI-65-T3Q"/>
+                            <constraint firstItem="vea-vW-QVA" firstAttribute="centerY" secondItem="xfP-no-Ii1" secondAttribute="centerY" constant="-0.5" id="AgJ-MW-iHh"/>
                             <constraint firstItem="fcH-jU-gOm" firstAttribute="width" secondItem="fli-6u-tkz" secondAttribute="width" id="Hxx-ax-YSR"/>
+                            <constraint firstItem="xfP-no-Ii1" firstAttribute="top" secondItem="oyj-Y6-4ii" secondAttribute="bottom" constant="20" id="ImT-MF-QFW"/>
                             <constraint firstItem="IJw-Ug-vpk" firstAttribute="top" secondItem="fNO-5a-oSm" secondAttribute="bottom" constant="20" id="JEc-Xt-PdZ"/>
+                            <constraint firstItem="oyj-Y6-4ii" firstAttribute="trailing" secondItem="fli-6u-tkz" secondAttribute="trailingMargin" id="K8C-gQ-paP"/>
                             <constraint firstAttribute="centerX" secondItem="IJw-Ug-vpk" secondAttribute="centerX" constant="-3" id="NnT-3F-Q3M"/>
+                            <constraint firstItem="xfP-no-Ii1" firstAttribute="trailing" secondItem="fli-6u-tkz" secondAttribute="trailingMargin" id="Poe-oL-93p"/>
                             <constraint firstAttribute="width" secondItem="IJw-Ug-vpk" secondAttribute="width" id="U8f-Zu-781"/>
+                            <constraint firstItem="xfP-no-Ii1" firstAttribute="leading" secondItem="vea-vW-QVA" secondAttribute="trailing" constant="18" id="fLZ-gn-C2j"/>
                             <constraint firstAttribute="centerX" secondItem="fcH-jU-gOm" secondAttribute="centerX" id="iIQ-Du-bFN"/>
+                            <constraint firstItem="vea-vW-QVA" firstAttribute="leading" secondItem="fli-6u-tkz" secondAttribute="leadingMargin" constant="16" id="qeB-wT-KPg"/>
                             <constraint firstItem="isg-Ou-hlM" firstAttribute="top" secondItem="fcH-jU-gOm" secondAttribute="bottom" constant="20" id="r2l-IK-MXU"/>
+                            <constraint firstItem="oyj-Y6-4ii" firstAttribute="centerY" secondItem="2tP-9X-4NN" secondAttribute="centerY" constant="-3.5" id="vYq-R7-wXm"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Gqh-i5-5Gj"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
+                        <outlet property="formSelection" destination="oyj-Y6-4ii" id="AR1-xj-xT7"/>
                         <outlet property="imageView" destination="IJw-Ug-vpk" id="KkR-YV-YhL"/>
+                        <outlet property="sizeSelection" destination="xfP-no-Ii1" id="jMm-IW-tc0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7vD-wc-cig" userLabel="First Responder" sceneMemberID="firstResponder"/>

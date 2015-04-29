@@ -14,6 +14,9 @@ class ResultController: UIViewController {
 
     @IBOutlet var imageView:UIImageView!
 
+    @IBOutlet weak var formSelection: UISegmentedControl!
+    @IBOutlet weak var sizeSelection: UISegmentedControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
