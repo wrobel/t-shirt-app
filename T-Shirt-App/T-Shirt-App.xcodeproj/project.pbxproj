@@ -11,9 +11,9 @@
 		14796ADA1AEF60FB00B8E7F4 /* JobUploadedProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14796AD91AEF60FB00B8E7F4 /* JobUploadedProtocol.swift */; };
 		14796ADC1AEF61A900B8E7F4 /* JobUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14796ADB1AEF61A900B8E7F4 /* JobUpload.swift */; };
 		14796ADE1AEF642100B8E7F4 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14796ADD1AEF642100B8E7F4 /* RootViewController.swift */; };
-		148FE7BD1AF037F2006A66A3 /* CurrentJobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148FE7BC1AF037F2006A66A3 /* CurrentJobViewController.swift */; };
 		148FE7BF1AF03A87006A66A3 /* JobDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148FE7BE1AF03A87006A66A3 /* JobDownload.swift */; };
 		148FE7C11AF09244006A66A3 /* JobDownloadedProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148FE7C01AF09244006A66A3 /* JobDownloadedProtocol.swift */; };
+		148FE7C31AF09742006A66A3 /* ResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148FE7C21AF09742006A66A3 /* ResultController.swift */; };
 		149909841ADD742800A810E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149909831ADD742800A810E6 /* AppDelegate.swift */; };
 		149909861ADD742800A810E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149909851ADD742800A810E6 /* ViewController.swift */; };
 		149909891ADD742800A810E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 149909871ADD742800A810E6 /* Main.storyboard */; };
@@ -41,9 +41,9 @@
 		14796AD91AEF60FB00B8E7F4 /* JobUploadedProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobUploadedProtocol.swift; sourceTree = "<group>"; };
 		14796ADB1AEF61A900B8E7F4 /* JobUpload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobUpload.swift; sourceTree = "<group>"; };
 		14796ADD1AEF642100B8E7F4 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		148FE7BC1AF037F2006A66A3 /* CurrentJobViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentJobViewController.swift; sourceTree = "<group>"; };
 		148FE7BE1AF03A87006A66A3 /* JobDownload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobDownload.swift; sourceTree = "<group>"; };
 		148FE7C01AF09244006A66A3 /* JobDownloadedProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobDownloadedProtocol.swift; sourceTree = "<group>"; };
+		148FE7C21AF09742006A66A3 /* ResultController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultController.swift; sourceTree = "<group>"; };
 		1499097E1ADD742800A810E6 /* T-Shirt-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "T-Shirt-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		149909821ADD742800A810E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		149909831ADD742800A810E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -111,7 +111,7 @@
 				149909851ADD742800A810E6 /* ViewController.swift */,
 				149909871ADD742800A810E6 /* Main.storyboard */,
 				14796ADD1AEF642100B8E7F4 /* RootViewController.swift */,
-				148FE7BC1AF037F2006A66A3 /* CurrentJobViewController.swift */,
+				148FE7C21AF09742006A66A3 /* ResultController.swift */,
 				14C700D31ADD7B7500E6C578 /* CameraViewController.swift */,
 				14796ADB1AEF61A900B8E7F4 /* JobUpload.swift */,
 				148FE7BE1AF03A87006A66A3 /* JobDownload.swift */,
@@ -308,10 +308,10 @@
 				1A914EAD1AE815B300CA17A2 /* PaymentViewController.swift in Sources */,
 				149909861ADD742800A810E6 /* ViewController.swift in Sources */,
 				148FE7BF1AF03A87006A66A3 /* JobDownload.swift in Sources */,
-				148FE7BD1AF037F2006A66A3 /* CurrentJobViewController.swift in Sources */,
 				14796ADA1AEF60FB00B8E7F4 /* JobUploadedProtocol.swift in Sources */,
 				149909841ADD742800A810E6 /* AppDelegate.swift in Sources */,
 				14C700D41ADD7B7500E6C578 /* CameraViewController.swift in Sources */,
+				148FE7C31AF09742006A66A3 /* ResultController.swift in Sources */,
 				148FE7C11AF09244006A66A3 /* JobDownloadedProtocol.swift in Sources */,
 				14796ADE1AEF642100B8E7F4 /* RootViewController.swift in Sources */,
 				14796ADC1AEF61A900B8E7F4 /* JobUpload.swift in Sources */,

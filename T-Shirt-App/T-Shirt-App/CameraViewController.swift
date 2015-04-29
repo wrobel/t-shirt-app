@@ -69,10 +69,12 @@ class CameraViewController: UIViewController,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         if !UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
             takePictureButton.hidden = true
         }
+        
+        assert(self.jobUpload != nil)
     }
     
     override func viewDidAppear(animated: Bool) {

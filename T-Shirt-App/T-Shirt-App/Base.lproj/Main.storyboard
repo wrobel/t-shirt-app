@@ -122,7 +122,7 @@
         <!--Upload-->
         <scene sceneID="ptX-9P-xlX">
             <objects>
-                <viewController storyboardIdentifier="current-job" id="XBu-3g-zRN" userLabel="Upload" customClass="CurrentJobViewController" customModule="T_Shirt_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="current-job" id="XBu-3g-zRN" userLabel="Upload" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xMR-NT-Xh0"/>
                         <viewControllerLayoutGuide type="bottom" id="lLk-by-tIh"/>
@@ -167,10 +167,10 @@
             </objects>
             <point key="canvasLocation" x="-875" y="-206"/>
         </scene>
-        <!--View Controller-->
+        <!--Result Controller-->
         <scene sceneID="Hxo-Tg-opJ">
             <objects>
-                <viewController id="36v-3H-2sG" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="result" id="36v-3H-2sG" customClass="ResultController" customModule="T_Shirt_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MYU-iR-rhz"/>
                         <viewControllerLayoutGuide type="bottom" id="isg-Ou-hlM"/>
@@ -200,6 +200,12 @@
                                     <navigationItem title="T-Shirt" id="uJn-5V-n7y"/>
                                 </items>
                             </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Blank" translatesAutoresizingMaskIntoConstraints="NO" id="IJw-Ug-vpk">
+                                <rect key="frame" x="3" y="86" width="414" height="371"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="371" id="2of-8q-J4R"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -207,15 +213,22 @@
                             <constraint firstAttribute="width" secondItem="fNO-5a-oSm" secondAttribute="width" id="9C7-S4-6g4"/>
                             <constraint firstAttribute="centerX" secondItem="fNO-5a-oSm" secondAttribute="centerX" id="AZI-65-T3Q"/>
                             <constraint firstItem="fcH-jU-gOm" firstAttribute="width" secondItem="fli-6u-tkz" secondAttribute="width" id="Hxx-ax-YSR"/>
+                            <constraint firstItem="IJw-Ug-vpk" firstAttribute="top" secondItem="fNO-5a-oSm" secondAttribute="bottom" constant="20" id="JEc-Xt-PdZ"/>
+                            <constraint firstAttribute="centerX" secondItem="IJw-Ug-vpk" secondAttribute="centerX" constant="-3" id="NnT-3F-Q3M"/>
+                            <constraint firstAttribute="width" secondItem="IJw-Ug-vpk" secondAttribute="width" id="U8f-Zu-781"/>
                             <constraint firstAttribute="centerX" secondItem="fcH-jU-gOm" secondAttribute="centerX" id="iIQ-Du-bFN"/>
                             <constraint firstItem="isg-Ou-hlM" firstAttribute="top" secondItem="fcH-jU-gOm" secondAttribute="bottom" constant="20" id="r2l-IK-MXU"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Gqh-i5-5Gj"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="imageView" destination="IJw-Ug-vpk" id="KkR-YV-YhL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7vD-wc-cig" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-380" y="-206"/>
+            <point key="canvasLocation" x="-1410" y="674"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="CmQ-Ql-KUd">
@@ -258,7 +271,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uxk-UF-2aw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="128" y="-206"/>
+            <point key="canvasLocation" x="-880" y="674"/>
         </scene>
         <!--Payment View Controller-->
         <scene sceneID="wAh-Qp-QRu">
@@ -346,7 +359,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="685-nZ-SbF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="643" y="-206"/>
+            <point key="canvasLocation" x="-309" y="674"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Blank" width="10" height="10"/>
+    </resources>
 </document>

@@ -8,18 +8,18 @@
 
 import UIKit
 
-class RootViewController: UIViewController, JobUploadedDelegate {
+class RootViewController: UIViewController, JobUploadedDelegate, JobDownloadedDelegate {
 
     private var jobQueue: JobQueue!
     private var queueId: String?
 
     private var cameraController: CameraViewController!
-    private var currentJobController: CurrentJobViewController!
-    //private var paymentController: PaymentViewController!
+    private var currentJobController: UIViewController!
+    private var resultController: ResultController!
 
     private let cameraControllerId = "camera"
     private let currentJobControllerId = "current-job"
-    private let paymentControllerId = "payment"
+    private let resultControllerId = "result"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,12 +34,21 @@ class RootViewController: UIViewController, JobUploadedDelegate {
             switchViewController(from: nil, to: cameraController)
         } else {
             createCurrentJobController()
-            switchViewController(from: nil, to: currentJobController)
+            //switchViewController(from: nil, to: currentJobController)
+            let jobDownload = JobDownload(jobDownloadedDelegate: self)
+            jobDownload.downloadJob(queueId!)
         }
     }
 
     func jobCreated(queueId: String) {
         self.jobQueue.storeNewJob(queueId)
+    }
+    
+    func jobDownloaded(result: UIImage) {
+        createResultController(result)
+        println(result)
+        //switchViewController(from: currentJobController, to: resultController)
+        presentViewController(resultController, animated: false, completion: nil)
     }
 
     private func createCameraController() {
@@ -54,7 +63,16 @@ class RootViewController: UIViewController, JobUploadedDelegate {
     private func createCurrentJobController() {
         if currentJobController?.view.superview == nil {
             if currentJobController == nil {
-                currentJobController = storyboard?.instantiateViewControllerWithIdentifier(currentJobControllerId) as CurrentJobViewController
+                currentJobController = storyboard?.instantiateViewControllerWithIdentifier(currentJobControllerId) as UIViewController
+            }
+        }
+    }
+    
+    private func createResultController(image: UIImage) {
+        if resultController?.view.superview == nil {
+            if resultController == nil {
+                resultController = storyboard?.instantiateViewControllerWithIdentifier(resultControllerId) as ResultController
+                resultController.displayResultImage(image)
             }
         }
     }
@@ -65,7 +83,7 @@ class RootViewController: UIViewController, JobUploadedDelegate {
             fromVC!.view.removeFromSuperview()
             fromVC!.removeFromParentViewController()
         }
-        
+
         if toVC != nil {
             toVC!.view.frame = view.frame
             

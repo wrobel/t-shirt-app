@@ -20,7 +20,9 @@ http.createServer(function(request, response) {
   if (request.method === 'POST') {
     var tempGuid = guid(),
         destinationFile = fs.createWriteStream('incoming/' + tempGuid + '.png');
+    console.log('REQUEST[POST]');
     request.pipe(destinationFile);
+    console.log('REQUEST[POST] - Created job ' + tempGuid);
     response.writeHead(
       204,
       {
@@ -29,15 +31,18 @@ http.createServer(function(request, response) {
       }
     );
     response.end();
-  } else if (request.method === 'get') {
+  } else if (request.method === 'GET') {
+    console.log('REQUEST[GET] : ' + request.url);
     var guidPath = url.parse(request.url).pathname,
-        guidSegment = path.normalize(guidPath).split('/')[0],
+        guidSegment = path.normalize(guidPath).split('/')[1],
         imagePath = 'outgoing/' + guidSegment + '.png';
-    fs.stat(imagePath, 'r', function(err, stats) {
+    fs.stat(imagePath, function(err, stats) {
       if (err) {
+        console.log('REQUEST[GET]  - No such job ' + guidSegment + ' [' + imagePath+ ']');
         response.writeHead(404);
         response.end();
       } else {
+        console.log('REQUEST[GET]  - Sending job result ' + guidSegment);
         response.writeHead(
           200,
           {
@@ -46,9 +51,10 @@ http.createServer(function(request, response) {
           }
         );
         fs.createReadStream(imagePath).pipe(response);
-        response.end();
       }
     });
     
   }
 }).listen(8000);
+
+console.log('Server started')
