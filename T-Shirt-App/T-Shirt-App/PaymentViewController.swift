@@ -93,7 +93,7 @@ class PaymentViewController: UIViewController, UINavigationControllerDelegate, C
         }
     }
 
-    func performPayment() {
+    @IBAction func performPayment() {
         var error: NSError?;
 
         let paymentMethod = PMFactory.genCardPaymentWithAccHolder(
