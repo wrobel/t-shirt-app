@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		145683C21AF15A69009DF1FB /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145683C11AF15A69009DF1FB /* Order.swift */; };
+		145683C41AF15F78009DF1FB /* ShippingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145683C31AF15F78009DF1FB /* ShippingViewController.swift */; };
 		14796AD81AEF4A8D00B8E7F4 /* JobQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14796AD71AEF4A8D00B8E7F4 /* JobQueue.swift */; };
 		14796ADA1AEF60FB00B8E7F4 /* JobUploadedProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14796AD91AEF60FB00B8E7F4 /* JobUploadedProtocol.swift */; };
 		14796ADC1AEF61A900B8E7F4 /* JobUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14796ADB1AEF61A900B8E7F4 /* JobUpload.swift */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		145683C11AF15A69009DF1FB /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		145683C31AF15F78009DF1FB /* ShippingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShippingViewController.swift; sourceTree = "<group>"; };
 		14796AD71AEF4A8D00B8E7F4 /* JobQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobQueue.swift; sourceTree = "<group>"; };
 		14796AD91AEF60FB00B8E7F4 /* JobUploadedProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobUploadedProtocol.swift; sourceTree = "<group>"; };
 		14796ADB1AEF61A900B8E7F4 /* JobUpload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobUpload.swift; sourceTree = "<group>"; };
@@ -112,12 +116,14 @@
 				149909871ADD742800A810E6 /* Main.storyboard */,
 				14796ADD1AEF642100B8E7F4 /* RootViewController.swift */,
 				148FE7C21AF09742006A66A3 /* ResultController.swift */,
+				145683C31AF15F78009DF1FB /* ShippingViewController.swift */,
 				14C700D31ADD7B7500E6C578 /* CameraViewController.swift */,
 				14796ADB1AEF61A900B8E7F4 /* JobUpload.swift */,
 				148FE7BE1AF03A87006A66A3 /* JobDownload.swift */,
 				14796AD91AEF60FB00B8E7F4 /* JobUploadedProtocol.swift */,
 				148FE7C01AF09244006A66A3 /* JobDownloadedProtocol.swift */,
 				14796AD71AEF4A8D00B8E7F4 /* JobQueue.swift */,
+				145683C11AF15A69009DF1FB /* Order.swift */,
 				1499098A1ADD742800A810E6 /* Images.xcassets */,
 				1499098C1ADD742800A810E6 /* LaunchScreen.xib */,
 				149909811ADD742800A810E6 /* Supporting Files */,
@@ -219,9 +225,11 @@
 				TargetAttributes = {
 					1499097D1ADD742800A810E6 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = A3EW8TRXGY;
 					};
 					149909921ADD742800A810E6 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = A3EW8TRXGY;
 						TestTargetID = 1499097D1ADD742800A810E6;
 					};
 				};
@@ -310,11 +318,13 @@
 				148FE7BF1AF03A87006A66A3 /* JobDownload.swift in Sources */,
 				14796ADA1AEF60FB00B8E7F4 /* JobUploadedProtocol.swift in Sources */,
 				149909841ADD742800A810E6 /* AppDelegate.swift in Sources */,
+				145683C21AF15A69009DF1FB /* Order.swift in Sources */,
 				14C700D41ADD7B7500E6C578 /* CameraViewController.swift in Sources */,
 				148FE7C31AF09742006A66A3 /* ResultController.swift in Sources */,
 				148FE7C11AF09244006A66A3 /* JobDownloadedProtocol.swift in Sources */,
 				14796ADE1AEF642100B8E7F4 /* RootViewController.swift in Sources */,
 				14796ADC1AEF61A900B8E7F4 /* JobUpload.swift in Sources */,
+				145683C41AF15F78009DF1FB /* ShippingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,6 +473,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -474,6 +486,7 @@
 				INFOPLIST_FILE = "T-Shirt-AppTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/T-Shirt-App.app/T-Shirt-App";
 			};
 			name = Debug;
@@ -482,6 +495,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -489,6 +504,7 @@
 				INFOPLIST_FILE = "T-Shirt-AppTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/T-Shirt-App.app/T-Shirt-App";
 			};
 			name = Release;

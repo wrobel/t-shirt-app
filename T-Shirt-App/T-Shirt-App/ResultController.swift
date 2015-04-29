@@ -54,6 +54,13 @@ class ResultController: UIViewController {
         }
     }
 
+    @IBAction func newOrder(sender: AnyObject) {
+        let order = Order(
+            form: ShirtForm(rawValue: formSelection.selectedSegmentIndex)!,
+            size: ShirtSize(rawValue: sizeSelection.selectedSegmentIndex)!
+        );
+        
+    }
     /*
     // MARK: - Navigation
 
