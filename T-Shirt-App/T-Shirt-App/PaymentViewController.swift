@@ -33,7 +33,7 @@ class PaymentViewController: UIViewController, UINavigationControllerDelegate, C
         expirationDate.userInteractionEnabled = false;
         ccv.userInteractionEnabled = false;
 
-        performPaymentBtn.enabled = false;
+        performPaymentBtn.hidden = true;
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -85,7 +85,7 @@ class PaymentViewController: UIViewController, UINavigationControllerDelegate, C
                 if success{
                     println("successfully initialized PayMillSDK");
 
-                    self.performPaymentBtn.enabled = false;
+                    self.performPaymentBtn.hidden = false;
                 }
                 else{
                     println("Error during initialization")
