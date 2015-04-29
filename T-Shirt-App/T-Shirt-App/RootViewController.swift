@@ -61,7 +61,7 @@ class RootViewController: UIViewController, JobUploadedDelegate, JobDownloadedDe
     private func createCameraController() {
         if cameraController?.view.superview == nil {
             if cameraController == nil {
-                cameraController = storyboard?.instantiateViewControllerWithIdentifier(cameraControllerId) as CameraViewController
+                cameraController = storyboard?.instantiateViewControllerWithIdentifier(cameraControllerId) as! CameraViewController
             }
         }
         cameraController.jobUpload = JobUpload(jobUploadDelegate: self)
@@ -70,7 +70,7 @@ class RootViewController: UIViewController, JobUploadedDelegate, JobDownloadedDe
     private func createCurrentJobController() {
         if currentJobController?.view.superview == nil {
             if currentJobController == nil {
-                currentJobController = storyboard?.instantiateViewControllerWithIdentifier(currentJobControllerId) as UIViewController
+                currentJobController = storyboard?.instantiateViewControllerWithIdentifier(currentJobControllerId) as! UIViewController
             }
         }
     }
@@ -78,7 +78,7 @@ class RootViewController: UIViewController, JobUploadedDelegate, JobDownloadedDe
     private func createResultController(image: UIImage) {
         if resultController?.view.superview == nil {
             if resultController == nil {
-                resultController = storyboard?.instantiateViewControllerWithIdentifier(resultControllerId) as ResultController
+                resultController = storyboard?.instantiateViewControllerWithIdentifier(resultControllerId) as! ResultController
                 resultController.displayResultImage(image)
             }
         }
