@@ -10,5 +10,6 @@
 #define T_Shirt_App_T_Shirt_App_Swift_Bridging_Header_h
 
 #import "CardIO.h"
+#import <PayMillSDK/PMSDK.h>
 
 #endif

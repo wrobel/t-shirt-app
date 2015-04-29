@@ -10,11 +10,30 @@ import UIKit
 
 class PaymentViewController: UIViewController, UINavigationControllerDelegate, CardIOPaymentViewControllerDelegate {
     
-    @IBOutlet var statusLabel:UILabel!
+    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var cardNumber: UITextField!
+    @IBOutlet weak var expirationDate: UITextField!
+    @IBOutlet weak var ccv: UITextField!
+    @IBOutlet weak var actionBtn: UIButton!
+    @IBOutlet weak var performPaymentBtn: UIButton!
+
+    let payMillPublicKey = "913760753501aa5d8da1952ea8ee79a9";
+    var userCardNumber: String = "";
+    var userCvc: String = "";
+    var userExpirationMonth: UInt = 0;
+    var userExpirationYear: UInt = 0;
+    var fullName = "Tobias Deekens";
     
     override func viewDidLoad() {
         super.viewDidLoad()
         CardIOUtilities.preload()
+        initPayment();
+
+        cardNumber.userInteractionEnabled = false;
+        expirationDate.userInteractionEnabled = false;
+        ccv.userInteractionEnabled = false;
+
+        performPaymentBtn.hidden = true;
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -39,12 +58,74 @@ class PaymentViewController: UIViewController, UINavigationControllerDelegate, C
     
     func userDidProvideCreditCardInfo(cardInfo: CardIOCreditCardInfo!, inPaymentViewController paymentViewController: CardIOPaymentViewController!) {
         if let info = cardInfo {
-            let str = NSString(format: "Received card info.\n Number: %@\n expiry: %02lu/%lu\n cvv: %@.", info.redactedCardNumber, info.expiryMonth, info.expiryYear, info.cvv)
-            statusLabel.text = str as String
+            updatePaymentInfo(info);
         }
         paymentViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    func updatePaymentInfo(info:CardIOCreditCardInfo) {
+        let paymentReceived = "Ihre Zahlungsdaten zur Überprüfung";
+
+        statusLabel.text = paymentReceived;
+        actionBtn.hidden = true;
+
+        cardNumber.text = info.redactedCardNumber;
+        expirationDate.text = toString(info.expiryMonth) + "/" + toString(info.expiryYear);
+        ccv.text = info.cvv;
+
+        userCardNumber = info.redactedCardNumber;
+        userCvc = info.cvv;
+        userExpirationMonth = info.expiryMonth;
+        userExpirationYear = info.expiryYear;
+    };
+
+    func initPayment() {
+        PMManager.initWithTestMode(true, merchantPublicKey: payMillPublicKey, newDeviceId: nil)
+            { (success, error) -> Void in
+                if success{
+                    println("successfully initialized PayMillSDK");
+
+                    self.performPaymentBtn.hidden = false;
+                }
+                else{
+                    println("Error during initialization")
+                }
+        }
+    }
+
+    @IBAction func performPayment() {
+        var error: NSError?;
+
+        let paymentMethod = PMFactory.genCardPaymentWithAccHolder(
+            fullName,
+            cardNumber: userCardNumber,
+            expiryMonth: toString(userExpirationMonth),
+            expiryYear: toString(userExpirationYear),
+            verification: userCvc,
+            error: &error
+        );
+
+        if(error == false) {
+            let params = PMFactory.genPaymentParamsWithCurrency(
+                "EUR",
+                amount:100,
+                description:"Description",
+                error:&error
+            );
+
+            PMManager.transactionWithMethod(
+                paymentMethod,
+                parameters:params,
+                consumable:true,
+                success: { (PMTransaction) -> Void in
+                    println("payment done");
+                },
+                failure: { (NSError) -> Void in
+                    println("payment failed");
+                }
+            );
+        }
+    }
     
     /*
     // MARK: - Navigation

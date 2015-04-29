@@ -18,7 +18,7 @@ class JobQueue {
             NSSearchPathDomainMask.UserDomainMask,
             true
         )
-        let documentsDirectory = paths[0] as NSString
+        let documentsDirectory = paths[0] as! NSString
         return documentsDirectory.stringByAppendingPathComponent(queueFileName) as String
     }
 

@@ -28,8 +28,8 @@ class JobUpload {
             if (error != nil) {
                 println(error.localizedDescription)
             } else {
-                let httpResponse = response as NSHTTPURLResponse
-                let location = httpResponse.allHeaderFields["Location"] as String
+                let httpResponse = response as! NSHTTPURLResponse
+                let location = httpResponse.allHeaderFields["Location"] as! String
                 self.jobUploadedDelegate.jobCreated(location)
             }
         })
