@@ -37,6 +37,7 @@ class ResultController: UIViewController {
 
     func updateDisplay() {
         if let currentResult = result {
+            println("Displaying result image")
             println(currentResult)
             if imageView != nil {
                 imageView.image = currentResult

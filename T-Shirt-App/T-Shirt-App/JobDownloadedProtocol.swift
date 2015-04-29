@@ -10,5 +10,5 @@ import Foundation
 
 
 protocol JobDownloadedDelegate {
-    func jobDownloaded(result: UIImage)
+    func jobDownloaded(result: UIImage?)
 }

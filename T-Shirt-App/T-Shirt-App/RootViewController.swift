@@ -33,8 +33,6 @@ class RootViewController: UIViewController, JobUploadedDelegate, JobDownloadedDe
             createCameraController()
             switchViewController(from: nil, to: cameraController)
         } else {
-            createCurrentJobController()
-            //switchViewController(from: nil, to: currentJobController)
             let jobDownload = JobDownload(jobDownloadedDelegate: self)
             jobDownload.downloadJob(queueId!)
         }
@@ -42,13 +40,22 @@ class RootViewController: UIViewController, JobUploadedDelegate, JobDownloadedDe
 
     func jobCreated(queueId: String) {
         self.jobQueue.storeNewJob(queueId)
+        println("Job created, switching view")
+        createCurrentJobController()
+        switchViewController(from: cameraController, to: currentJobController)
     }
     
-    func jobDownloaded(result: UIImage) {
-        createResultController(result)
-        println(result)
-        //switchViewController(from: currentJobController, to: resultController)
-        presentViewController(resultController, animated: false, completion: nil)
+    func jobDownloaded(result: UIImage?) {
+        if result != nil {
+            createResultController(result!)
+            println(result)
+            presentViewController(resultController, animated: true, completion: nil)
+            //switchViewController(from: nil, to: resultController)
+        } else {
+            createCurrentJobController()
+            presentViewController(currentJobController, animated: true, completion: nil)
+            //switchViewController(from: nil, to: currentJobController)
+        }
     }
 
     private func createCameraController() {

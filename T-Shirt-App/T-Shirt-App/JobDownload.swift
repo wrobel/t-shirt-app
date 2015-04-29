@@ -28,7 +28,9 @@ class JobDownload {
                 println(error.localizedDescription)
             } else if data.length == 0 {
                 println("No result yet")
+                self.jobDownloadedDelegate.jobDownloaded(nil)
             } else {
+                println("Job result available")
                 self.jobDownloadedDelegate.jobDownloaded(UIImage(data: data)!)
             }
         })
