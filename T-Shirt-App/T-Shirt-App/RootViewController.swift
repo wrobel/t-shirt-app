@@ -49,12 +49,10 @@ class RootViewController: UIViewController, JobUploadedDelegate, JobDownloadedDe
         if result != nil {
             createResultController(result!)
             println(result)
-            presentViewController(resultController, animated: true, completion: nil)
-            //switchViewController(from: nil, to: resultController)
+            switchViewController(from: nil, to: resultController)
         } else {
             createCurrentJobController()
-            presentViewController(currentJobController, animated: true, completion: nil)
-            //switchViewController(from: nil, to: currentJobController)
+            switchViewController(from: nil, to: currentJobController)
         }
     }
 
@@ -62,9 +60,9 @@ class RootViewController: UIViewController, JobUploadedDelegate, JobDownloadedDe
         if cameraController?.view.superview == nil {
             if cameraController == nil {
                 cameraController = storyboard?.instantiateViewControllerWithIdentifier(cameraControllerId) as! CameraViewController
+                cameraController.jobUpload = JobUpload(jobUploadDelegate: self)
             }
         }
-        cameraController.jobUpload = JobUpload(jobUploadDelegate: self)
     }
     
     private func createCurrentJobController() {

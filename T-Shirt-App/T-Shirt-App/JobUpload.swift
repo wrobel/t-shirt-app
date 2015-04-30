@@ -30,7 +30,9 @@ class JobUpload {
             } else {
                 let httpResponse = response as! NSHTTPURLResponse
                 let location = httpResponse.allHeaderFields["Location"] as! String
-                self.jobUploadedDelegate.jobCreated(location)
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.jobUploadedDelegate.jobCreated(location)
+                })
             }
         })
     
