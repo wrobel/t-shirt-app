@@ -41,7 +41,7 @@ class CameraViewController: UIViewController,
         presentViewController(picker, animated: true, completion: nil)
     }
     
-    func imagePickerController(picker: UIImagePickerController!, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]!) {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         image = info[UIImagePickerControllerEditedImage] as? UIImage
         picker.dismissViewControllerAnimated(true, completion: nil)
     }
