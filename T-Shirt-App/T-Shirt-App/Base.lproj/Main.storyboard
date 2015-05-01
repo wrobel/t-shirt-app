@@ -201,16 +201,22 @@
                                     <navigationItem title="T-Shirt wählen" id="uJn-5V-n7y"/>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Blank" translatesAutoresizingMaskIntoConstraints="NO" id="IJw-Ug-vpk">
-                                <rect key="frame" x="3" y="86" width="414" height="371"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Blank" translatesAutoresizingMaskIntoConstraints="NO" id="IJw-Ug-vpk">
+                                <rect key="frame" x="3" y="86" width="414" height="484"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="371" id="2of-8q-J4R"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="2of-8q-J4R"/>
+                                    </mask>
+                                </variation>
                             </imageView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xfP-no-Ii1">
                                 <rect key="frame" x="98" y="638" width="300" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="Xzz-0y-R2a"/>
+                                    <constraint firstAttribute="height" constant="28" id="m56-Vw-T1j"/>
                                 </constraints>
                                 <segments>
                                     <segment title="S"/>
@@ -227,6 +233,7 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oyj-Y6-4ii">
                                 <rect key="frame" x="98" y="590" width="300" height="29"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="U2U-jh-AZe"/>
                                     <constraint firstAttribute="width" constant="300" id="UoC-kA-tmJ"/>
                                 </constraints>
                                 <segments>
@@ -258,6 +265,7 @@
                             <constraint firstItem="fNO-5a-oSm" firstAttribute="top" secondItem="MYU-iR-rhz" secondAttribute="bottom" id="2C7-dz-kJV"/>
                             <constraint firstItem="fcH-jU-gOm" firstAttribute="top" secondItem="xfP-no-Ii1" secondAttribute="bottom" constant="20" id="2ZN-x3-UxE"/>
                             <constraint firstItem="oyj-Y6-4ii" firstAttribute="leading" secondItem="2tP-9X-4NN" secondAttribute="trailing" constant="18" id="5EN-e1-5wh"/>
+                            <constraint firstItem="xfP-no-Ii1" firstAttribute="top" secondItem="oyj-Y6-4ii" secondAttribute="bottom" constant="20" id="5Tt-s8-2Ga"/>
                             <constraint firstAttribute="width" secondItem="fNO-5a-oSm" secondAttribute="width" id="9C7-S4-6g4"/>
                             <constraint firstAttribute="centerX" secondItem="fNO-5a-oSm" secondAttribute="centerX" id="AZI-65-T3Q"/>
                             <constraint firstItem="vea-vW-QVA" firstAttribute="centerY" secondItem="xfP-no-Ii1" secondAttribute="centerY" constant="-0.5" id="AgJ-MW-iHh"/>
@@ -268,12 +276,22 @@
                             <constraint firstAttribute="centerX" secondItem="IJw-Ug-vpk" secondAttribute="centerX" constant="-3" id="NnT-3F-Q3M"/>
                             <constraint firstItem="xfP-no-Ii1" firstAttribute="trailing" secondItem="fli-6u-tkz" secondAttribute="trailingMargin" id="Poe-oL-93p"/>
                             <constraint firstAttribute="width" secondItem="IJw-Ug-vpk" secondAttribute="width" id="U8f-Zu-781"/>
+                            <constraint firstItem="oyj-Y6-4ii" firstAttribute="top" secondItem="IJw-Ug-vpk" secondAttribute="bottom" constant="133" id="WkP-4B-n5B"/>
+                            <constraint firstItem="oyj-Y6-4ii" firstAttribute="top" secondItem="IJw-Ug-vpk" secondAttribute="bottom" constant="20" id="bBw-Z9-T0B"/>
                             <constraint firstItem="xfP-no-Ii1" firstAttribute="leading" secondItem="vea-vW-QVA" secondAttribute="trailing" constant="18" id="fLZ-gn-C2j"/>
                             <constraint firstAttribute="centerX" secondItem="fcH-jU-gOm" secondAttribute="centerX" id="iIQ-Du-bFN"/>
                             <constraint firstItem="vea-vW-QVA" firstAttribute="leading" secondItem="fli-6u-tkz" secondAttribute="leadingMargin" constant="16" id="qeB-wT-KPg"/>
                             <constraint firstItem="isg-Ou-hlM" firstAttribute="top" secondItem="fcH-jU-gOm" secondAttribute="bottom" constant="20" id="r2l-IK-MXU"/>
                             <constraint firstItem="oyj-Y6-4ii" firstAttribute="centerY" secondItem="2tP-9X-4NN" secondAttribute="centerY" constant="-3.5" id="vYq-R7-wXm"/>
+                            <constraint firstItem="fcH-jU-gOm" firstAttribute="top" secondItem="xfP-no-Ii1" secondAttribute="bottom" constant="20" id="vhS-eX-GnU"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="WkP-4B-n5B"/>
+                                <exclude reference="ImT-MF-QFW"/>
+                                <exclude reference="2ZN-x3-UxE"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Gqh-i5-5Gj"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
