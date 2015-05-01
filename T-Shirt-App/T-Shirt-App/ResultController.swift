@@ -14,9 +14,6 @@ class ResultController: UIViewController {
 
     @IBOutlet var imageView:UIImageView!
 
-    @IBOutlet weak var formSelection: UISegmentedControl!
-    @IBOutlet weak var sizeSelection: UISegmentedControl!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -54,13 +51,6 @@ class ResultController: UIViewController {
         }
     }
 
-    @IBAction func newOrder(sender: AnyObject) {
-        let order = Order(
-            form: ShirtForm(rawValue: formSelection.selectedSegmentIndex)!,
-            size: ShirtSize(rawValue: sizeSelection.selectedSegmentIndex)!
-        );
-        
-    }
     /*
     // MARK: - Navigation
 

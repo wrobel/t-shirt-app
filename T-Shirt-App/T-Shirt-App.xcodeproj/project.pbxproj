@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		141B13C61AF3DC110024570B /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141B13C51AF3DC110024570B /* FormViewController.swift */; };
+		141B13C81AF3DCA20024570B /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141B13C71AF3DCA20024570B /* NameViewController.swift */; };
 		145683C21AF15A69009DF1FB /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145683C11AF15A69009DF1FB /* Order.swift */; };
 		145683C41AF15F78009DF1FB /* ShippingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145683C31AF15F78009DF1FB /* ShippingViewController.swift */; };
 		14796AD81AEF4A8D00B8E7F4 /* JobQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14796AD71AEF4A8D00B8E7F4 /* JobQueue.swift */; };
@@ -39,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		141B13C51AF3DC110024570B /* FormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
+		141B13C71AF3DCA20024570B /* NameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
 		145683C11AF15A69009DF1FB /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		145683C31AF15F78009DF1FB /* ShippingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShippingViewController.swift; sourceTree = "<group>"; };
 		14796AD71AEF4A8D00B8E7F4 /* JobQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobQueue.swift; sourceTree = "<group>"; };
@@ -114,6 +118,8 @@
 				149909831ADD742800A810E6 /* AppDelegate.swift */,
 				149909851ADD742800A810E6 /* ViewController.swift */,
 				149909871ADD742800A810E6 /* Main.storyboard */,
+				141B13C51AF3DC110024570B /* FormViewController.swift */,
+				141B13C71AF3DCA20024570B /* NameViewController.swift */,
 				14796ADD1AEF642100B8E7F4 /* RootViewController.swift */,
 				148FE7C21AF09742006A66A3 /* ResultController.swift */,
 				145683C31AF15F78009DF1FB /* ShippingViewController.swift */,
@@ -314,6 +320,7 @@
 			files = (
 				14796AD81AEF4A8D00B8E7F4 /* JobQueue.swift in Sources */,
 				1A914EAD1AE815B300CA17A2 /* PaymentViewController.swift in Sources */,
+				141B13C61AF3DC110024570B /* FormViewController.swift in Sources */,
 				149909861ADD742800A810E6 /* ViewController.swift in Sources */,
 				148FE7BF1AF03A87006A66A3 /* JobDownload.swift in Sources */,
 				14796ADA1AEF60FB00B8E7F4 /* JobUploadedProtocol.swift in Sources */,
@@ -325,6 +332,7 @@
 				14796ADE1AEF642100B8E7F4 /* RootViewController.swift in Sources */,
 				14796ADC1AEF61A900B8E7F4 /* JobUpload.swift in Sources */,
 				145683C41AF15F78009DF1FB /* ShippingViewController.swift in Sources */,
+				141B13C81AF3DCA20024570B /* NameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
