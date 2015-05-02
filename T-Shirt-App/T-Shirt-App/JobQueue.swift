@@ -39,7 +39,7 @@ class JobQueue {
         return nil
     }
 
-    func clearActiveJob(job: String) {
+    func clearActiveJob() {
         "".writeToFile(self.dataFilePath(), atomically: true, encoding: NSUTF8StringEncoding)
         println("Cleared current job")
     }

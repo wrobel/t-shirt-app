@@ -10,6 +10,10 @@
 		141B13C61AF3DC110024570B /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141B13C51AF3DC110024570B /* FormViewController.swift */; };
 		141B13C81AF3DCA20024570B /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141B13C71AF3DCA20024570B /* NameViewController.swift */; };
 		141B13CA1AF4EE270024570B /* AbortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141B13C91AF4EE270024570B /* AbortViewController.swift */; };
+		141B13DD1AF533970024570B /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 141B13DC1AF533970024570B /* Settings.plist */; };
+		141B13DF1AF56D770024570B /* SettingsOverride.plist in Resources */ = {isa = PBXBuildFile; fileRef = 141B13DE1AF56D770024570B /* SettingsOverride.plist */; };
+		141B13E11AF56E1B0024570B /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141B13E01AF56E1B0024570B /* Settings.swift */; };
+		141B13E31AF57AB40024570B /* CommentUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141B13E21AF57AB40024570B /* CommentUpload.swift */; };
 		145683C21AF15A69009DF1FB /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145683C11AF15A69009DF1FB /* Order.swift */; };
 		145683C41AF15F78009DF1FB /* ShippingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145683C31AF15F78009DF1FB /* ShippingViewController.swift */; };
 		14796AD81AEF4A8D00B8E7F4 /* JobQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14796AD71AEF4A8D00B8E7F4 /* JobQueue.swift */; };
@@ -45,6 +49,10 @@
 		141B13C51AF3DC110024570B /* FormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		141B13C71AF3DCA20024570B /* NameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
 		141B13C91AF4EE270024570B /* AbortViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbortViewController.swift; sourceTree = "<group>"; };
+		141B13DC1AF533970024570B /* Settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Settings.plist; sourceTree = "<group>"; };
+		141B13DE1AF56D770024570B /* SettingsOverride.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SettingsOverride.plist; sourceTree = "<group>"; };
+		141B13E01AF56E1B0024570B /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		141B13E21AF57AB40024570B /* CommentUpload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentUpload.swift; sourceTree = "<group>"; };
 		145683C11AF15A69009DF1FB /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		145683C31AF15F78009DF1FB /* ShippingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShippingViewController.swift; sourceTree = "<group>"; };
 		14796AD71AEF4A8D00B8E7F4 /* JobQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobQueue.swift; sourceTree = "<group>"; };
@@ -128,6 +136,7 @@
 				145683C31AF15F78009DF1FB /* ShippingViewController.swift */,
 				14C700D31ADD7B7500E6C578 /* CameraViewController.swift */,
 				14796ADB1AEF61A900B8E7F4 /* JobUpload.swift */,
+				141B13E21AF57AB40024570B /* CommentUpload.swift */,
 				148FE7BE1AF03A87006A66A3 /* JobDownload.swift */,
 				14796AD91AEF60FB00B8E7F4 /* JobUploadedProtocol.swift */,
 				148FE7C01AF09244006A66A3 /* JobDownloadedProtocol.swift */,
@@ -137,6 +146,7 @@
 				1499098C1ADD742800A810E6 /* LaunchScreen.xib */,
 				149909811ADD742800A810E6 /* Supporting Files */,
 				1A914EAC1AE815B300CA17A2 /* PaymentViewController.swift */,
+				141B13E01AF56E1B0024570B /* Settings.swift */,
 			);
 			path = "T-Shirt-App";
 			sourceTree = "<group>";
@@ -145,6 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				149909821ADD742800A810E6 /* Info.plist */,
+				141B13DC1AF533970024570B /* Settings.plist */,
+				141B13DE1AF56D770024570B /* SettingsOverride.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -270,7 +282,9 @@
 				1AA530A41ADD754800333F6D /* .gitignore in Resources */,
 				149909891ADD742800A810E6 /* Main.storyboard in Resources */,
 				1499098E1ADD742800A810E6 /* LaunchScreen.xib in Resources */,
+				141B13DF1AF56D770024570B /* SettingsOverride.plist in Resources */,
 				1499098B1ADD742800A810E6 /* Images.xcassets in Resources */,
+				141B13DD1AF533970024570B /* Settings.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +338,7 @@
 				14796AD81AEF4A8D00B8E7F4 /* JobQueue.swift in Sources */,
 				1A914EAD1AE815B300CA17A2 /* PaymentViewController.swift in Sources */,
 				141B13C61AF3DC110024570B /* FormViewController.swift in Sources */,
+				141B13E11AF56E1B0024570B /* Settings.swift in Sources */,
 				149909861ADD742800A810E6 /* ViewController.swift in Sources */,
 				148FE7BF1AF03A87006A66A3 /* JobDownload.swift in Sources */,
 				14796ADA1AEF60FB00B8E7F4 /* JobUploadedProtocol.swift in Sources */,
@@ -334,6 +349,7 @@
 				148FE7C11AF09244006A66A3 /* JobDownloadedProtocol.swift in Sources */,
 				141B13CA1AF4EE270024570B /* AbortViewController.swift in Sources */,
 				14796ADE1AEF642100B8E7F4 /* RootViewController.swift in Sources */,
+				141B13E31AF57AB40024570B /* CommentUpload.swift in Sources */,
 				14796ADC1AEF61A900B8E7F4 /* JobUpload.swift in Sources */,
 				145683C41AF15F78009DF1FB /* ShippingViewController.swift in Sources */,
 				141B13C81AF3DCA20024570B /* NameViewController.swift in Sources */,

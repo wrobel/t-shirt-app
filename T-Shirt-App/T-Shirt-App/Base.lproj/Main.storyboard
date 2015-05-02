@@ -254,15 +254,15 @@
             </objects>
             <point key="canvasLocation" x="-1971" y="674"/>
         </scene>
-        <!--View Controller-->
+        <!--Abort View Controller-->
         <scene sceneID="GlQ-0T-b4y">
             <objects>
-                <viewController id="dnJ-EX-7FI" sceneMemberID="viewController">
+                <viewController id="dnJ-EX-7FI" customClass="AbortViewController" customModule="T_Shirt_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IfL-Vo-Au6"/>
                         <viewControllerLayoutGuide type="bottom" id="b7K-8y-8j3"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="AmI-PY-BLi">
+                    <view key="view" contentMode="scaleToFill" id="AmI-PY-BLi" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -285,7 +285,10 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iz8-Kl-XMQ">
                                 <rect key="frame" x="19" y="148" width="377" height="468"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="textFieldDoneEditing:" destination="dnJ-EX-7FI" eventType="editingDidEndOnExit" id="OKd-HM-dL6"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xBx-qh-QF6">
                                 <rect key="frame" x="0.0" y="636" width="414" height="30"/>
@@ -295,6 +298,9 @@
                                 <state key="normal" title="Abschicken und Auftrag abbrechen">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="UZJ-Cs-fcG" kind="show" identifier="AbortJob" id="850-lC-0UE"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qml-FW-K28">
                                 <rect key="frame" x="1" y="686" width="414" height="30"/>
@@ -334,8 +340,14 @@
                                 <exclude reference="ng5-eN-pdF"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <action selector="backgroundTap:" destination="dnJ-EX-7FI" eventType="touchDown" id="xIW-fd-aQa"/>
+                        </connections>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="commentField" destination="Iz8-Kl-XMQ" id="Z0Q-Co-RaV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zmY-Cp-Fph" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -997,6 +1009,6 @@
         <image name="Blank" width="10" height="10"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="u3O-4G-R5P"/>
+        <segue reference="850-lC-0UE"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -10,6 +10,8 @@ import Foundation
 
 class JobDownload {
 
+    let backendUrl = Settings().backendUrl()
+
     var jobDownloadedDelegate: JobDownloadedDelegate
     
     init(jobDownloadedDelegate delegate: JobDownloadedDelegate) {
@@ -17,7 +19,7 @@ class JobDownload {
     }
     
     func downloadJob(queueId: String) {
-        var request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:8000/" + queueId)!)
+        var request = NSMutableURLRequest(URL: NSURL(string: backendUrl + queueId)!)
         request.HTTPMethod = "GET"
         let session = NSURLSession.sharedSession();
         let task = session.dataTaskWithRequest(request, completionHandler:{

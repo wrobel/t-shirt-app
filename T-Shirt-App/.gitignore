@@ -31,3 +31,6 @@ Pods/
 # Carthage/Checkouts
 
 Carthage/Build
+
+# Personal settings override for this project
+SettingsOverride.plist

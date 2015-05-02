@@ -10,10 +10,18 @@ import UIKit
 
 class AbortViewController: UIViewController {
 
+    private var jobQueue: JobQueue!
+    private var commentUpload: CommentUpload!
+
+    @IBOutlet weak var commentField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        jobQueue = JobQueue()
+        commentUpload = CommentUpload()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +29,24 @@ class AbortViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func textFieldDoneEditing(sender: UITextField) {
+        sender.resignFirstResponder()
+    }
+    
+    @IBAction func backgroundTap(sender: UIControl) {
+        commentField.resignFirstResponder()
+    }
+    
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "AbortJob" {
+            if let job = jobQueue.loadActiveJob() {
+                commentUpload.post(commentField.text, job: job)
+            }
+            jobQueue.clearActiveJob()
+        }
     }
-    */
 
 }

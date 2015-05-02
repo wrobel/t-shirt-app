@@ -9,6 +9,8 @@
 import Foundation
 
 class JobUpload {
+    
+    let backendUrl = Settings().backendUrl()
 
     var jobUploadedDelegate: JobUploadedDelegate
     
@@ -17,7 +19,7 @@ class JobUpload {
     }
     
     func uploadJob(image: UIImage) {
-        var request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:8000")!)
+        var request = NSMutableURLRequest(URL: NSURL(string: backendUrl)!)
         request.HTTPMethod = "POST"
         let session = NSURLSession.sharedSession();
         let imageData = UIImagePNGRepresentation(image);
