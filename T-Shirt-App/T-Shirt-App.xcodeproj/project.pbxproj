@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		141B13C61AF3DC110024570B /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141B13C51AF3DC110024570B /* FormViewController.swift */; };
 		141B13C81AF3DCA20024570B /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141B13C71AF3DCA20024570B /* NameViewController.swift */; };
+		141B13CA1AF4EE270024570B /* AbortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141B13C91AF4EE270024570B /* AbortViewController.swift */; };
 		145683C21AF15A69009DF1FB /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145683C11AF15A69009DF1FB /* Order.swift */; };
 		145683C41AF15F78009DF1FB /* ShippingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145683C31AF15F78009DF1FB /* ShippingViewController.swift */; };
 		14796AD81AEF4A8D00B8E7F4 /* JobQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14796AD71AEF4A8D00B8E7F4 /* JobQueue.swift */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		141B13C51AF3DC110024570B /* FormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		141B13C71AF3DCA20024570B /* NameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
+		141B13C91AF4EE270024570B /* AbortViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbortViewController.swift; sourceTree = "<group>"; };
 		145683C11AF15A69009DF1FB /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		145683C31AF15F78009DF1FB /* ShippingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShippingViewController.swift; sourceTree = "<group>"; };
 		14796AD71AEF4A8D00B8E7F4 /* JobQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobQueue.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				149909831ADD742800A810E6 /* AppDelegate.swift */,
 				149909851ADD742800A810E6 /* ViewController.swift */,
 				149909871ADD742800A810E6 /* Main.storyboard */,
+				141B13C91AF4EE270024570B /* AbortViewController.swift */,
 				141B13C51AF3DC110024570B /* FormViewController.swift */,
 				141B13C71AF3DCA20024570B /* NameViewController.swift */,
 				14796ADD1AEF642100B8E7F4 /* RootViewController.swift */,
@@ -329,6 +332,7 @@
 				14C700D41ADD7B7500E6C578 /* CameraViewController.swift in Sources */,
 				148FE7C31AF09742006A66A3 /* ResultController.swift in Sources */,
 				148FE7C11AF09244006A66A3 /* JobDownloadedProtocol.swift in Sources */,
+				141B13CA1AF4EE270024570B /* AbortViewController.swift in Sources */,
 				14796ADE1AEF642100B8E7F4 /* RootViewController.swift in Sources */,
 				14796ADC1AEF61A900B8E7F4 /* JobUpload.swift in Sources */,
 				145683C41AF15F78009DF1FB /* ShippingViewController.swift in Sources */,

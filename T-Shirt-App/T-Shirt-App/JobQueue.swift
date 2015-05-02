@@ -31,9 +31,17 @@ class JobQueue {
         let filePath = self.dataFilePath()
         if (NSFileManager.defaultManager().fileExistsAtPath(filePath)) {
             let queueId = String(contentsOfFile: filePath, encoding: NSUTF8StringEncoding, error: nil)!
-            println("Loaded: " + queueId)
-            return queueId
+            if queueId != "" {
+                println("Loaded: " + queueId)
+                return queueId
+            }
         }
         return nil
     }
+
+    func clearActiveJob(job: String) {
+        "".writeToFile(self.dataFilePath(), atomically: true, encoding: NSUTF8StringEncoding)
+        println("Cleared current job")
+    }
+    
 }
