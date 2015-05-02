@@ -32,7 +32,13 @@ class FormViewController: UIViewController {
             let target = segue.destinationViewController as! NameViewController
             target.order = Order(
                 form: ShirtForm(rawValue: formSelection.selectedSegmentIndex)!,
-                size: ShirtSize(rawValue: sizeSelection.selectedSegmentIndex)!
+                size: ShirtSize(rawValue: sizeSelection.selectedSegmentIndex)!,
+                firstName: "",
+                lastName: "",
+                email: "",
+                address: "",
+                postalCode: "",
+                city: ""
             )
         }
     }

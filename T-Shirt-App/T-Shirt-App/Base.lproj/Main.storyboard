@@ -263,7 +263,7 @@
                         <viewControllerLayoutGuide type="top" id="c9v-fp-i77"/>
                         <viewControllerLayoutGuide type="bottom" id="j91-Sl-lSx"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="wkZ-qB-Y4l">
+                    <view key="view" contentMode="scaleToFill" id="wkZ-qB-Y4l" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -292,7 +292,10 @@
                                     <constraint firstAttribute="height" constant="30" id="tNx-ox-ImG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="textFieldDoneEditing:" destination="hai-8p-T9m" eventType="editingDidEndOnExit" id="blb-hQ-9eh"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="39W-dR-GK0">
                                 <rect key="frame" x="19" y="207" width="376" height="30"/>
@@ -300,7 +303,10 @@
                                     <constraint firstAttribute="height" constant="30" id="8Ku-QS-8ig"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="textFieldDoneEditing:" destination="hai-8p-T9m" eventType="editingDidEndOnExit" id="M8P-Kj-Hhj"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NGH-bP-f1A">
                                 <rect key="frame" x="19" y="307" width="376" height="30"/>
@@ -308,7 +314,10 @@
                                     <constraint firstAttribute="height" constant="30" id="oVK-tp-dnw"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="textFieldDoneEditing:" destination="hai-8p-T9m" eventType="editingDidEndOnExit" id="xmU-DL-uqe"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adresse" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lrY-F8-pbo">
                                 <rect key="frame" x="20" y="66" width="376" height="21"/>
@@ -344,7 +353,7 @@
                                 </constraints>
                                 <state key="normal" title="Bezahlen"/>
                                 <connections>
-                                    <segue destination="lB9-Tn-dq8" kind="show" id="M88-hr-cuJ"/>
+                                    <segue destination="lB9-Tn-dq8" kind="show" identifier="ShippingToPayment" id="M88-hr-cuJ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -416,8 +425,16 @@
                                 <exclude reference="wKJ-xR-eSJ"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <action selector="backgroundTap:" destination="hai-8p-T9m" eventType="touchDown" id="2lq-0K-hBw"/>
+                        </connections>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="address" destination="MZU-Bc-O6R" id="AFO-a9-BYT"/>
+                        <outlet property="city" destination="NGH-bP-f1A" id="Grq-W4-kVo"/>
+                        <outlet property="postalCode" destination="39W-dR-GK0" id="Ldn-nx-TbL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uxk-UF-2aw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -717,7 +734,7 @@
                         <viewControllerLayoutGuide type="top" id="UZZ-Wk-aru"/>
                         <viewControllerLayoutGuide type="bottom" id="EAe-xN-Anm"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="n8r-li-6ea">
+                    <view key="view" contentMode="scaleToFill" id="n8r-li-6ea" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -788,7 +805,10 @@
                                     <constraint firstAttribute="height" constant="30" id="YSO-aS-Jv6"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="textFieldDoneEditing:" destination="hXg-TO-Je5" eventType="editingDidEndOnExit" id="YaO-x9-Qj6"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zg3-d3-bjO">
                                 <rect key="frame" x="19" y="216" width="376" height="30"/>
@@ -797,7 +817,10 @@
                                     <constraint firstAttribute="height" constant="30" id="Yeb-uN-G54"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="textFieldDoneEditing:" destination="hXg-TO-Je5" eventType="editingDidEndOnExit" id="A6R-PT-F3K"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hEB-oZ-eAz">
                                 <rect key="frame" x="19" y="336" width="376" height="30"/>
@@ -807,7 +830,10 @@
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="30" id="xd9-nZ-3x2"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="textFieldDoneEditing:" destination="hXg-TO-Je5" eventType="editingDidEndOnExit" id="YcR-B7-HNf"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OQj-VU-Afx">
                                 <rect key="frame" x="0.0" y="636" width="414" height="30"/>
@@ -817,7 +843,7 @@
                                 </constraints>
                                 <state key="normal" title="Weiter"/>
                                 <connections>
-                                    <segue destination="hai-8p-T9m" kind="show" id="YQM-Vp-aWt"/>
+                                    <segue destination="hai-8p-T9m" kind="show" identifier="NameToShipping" id="YQM-Vp-aWt"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -864,9 +890,17 @@
                                 <exclude reference="pxh-BP-z5a"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <action selector="backgroundTap:" destination="hXg-TO-Je5" eventType="touchDown" id="bcN-ce-CPU"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="oLm-Z1-MDq"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="email" destination="hEB-oZ-eAz" id="hEa-dc-K97"/>
+                        <outlet property="firstName" destination="lcy-No-N6A" id="dvu-JI-7HJ"/>
+                        <outlet property="lastName" destination="Zg3-d3-bjO" id="Efo-Mr-4Rc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="02k-aT-1lH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

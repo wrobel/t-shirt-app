@@ -10,6 +10,12 @@ import UIKit
 
 class ShippingViewController: UIViewController {
 
+    var order: Order!
+    
+    @IBOutlet weak var address: UITextField!
+    @IBOutlet weak var postalCode: UITextField!
+    @IBOutlet weak var city: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,15 +27,27 @@ class ShippingViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func textFieldDoneEditing(sender: UITextField) {
+        sender.resignFirstResponder()
+    }
+    
+    @IBAction func backgroundTap(sender: UIControl) {
+        address.resignFirstResponder()
+        postalCode.resignFirstResponder()
+        city.resignFirstResponder()
+    }
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "ShippingToPayment" {
+            let target = segue.destinationViewController as! PaymentViewController
+            self.order.address = address.text
+            self.order.postalCode = postalCode.text
+            self.order.city = city.text
+            
+            target.order = order
+        }
     }
-    */
 
 }

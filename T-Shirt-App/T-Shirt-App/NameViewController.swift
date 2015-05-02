@@ -12,6 +12,10 @@ class NameViewController: UIViewController {
 
     var order: Order!
     
+    @IBOutlet weak var firstName: UITextField!
+    @IBOutlet weak var lastName: UITextField!
+    @IBOutlet weak var email: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,15 +27,27 @@ class NameViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func textFieldDoneEditing(sender: UITextField) {
+        sender.resignFirstResponder()
+    }
 
-    /*
+    @IBAction func backgroundTap(sender: UIControl) {
+        firstName.resignFirstResponder()
+        lastName.resignFirstResponder()
+        email.resignFirstResponder()
+    }
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "NameToShipping" {
+            let target = segue.destinationViewController as! ShippingViewController
+            self.order.firstName = firstName.text
+            self.order.lastName = lastName.text
+            self.order.email = email.text
+            
+            target.order = order
+        }
     }
-    */
 
 }

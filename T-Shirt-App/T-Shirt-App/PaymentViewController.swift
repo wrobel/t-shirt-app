@@ -10,6 +10,8 @@ import UIKit
 
 class PaymentViewController: UIViewController, UINavigationControllerDelegate, CardIOPaymentViewControllerDelegate {
     
+    var order: Order!
+    
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var cardNumber: UITextField!
     @IBOutlet weak var expirationDate: UITextField!

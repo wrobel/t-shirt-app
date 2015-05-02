@@ -23,4 +23,12 @@ enum ShirtSize: Int {
 struct Order {
     var form: ShirtForm
     var size: ShirtSize
+    
+    var firstName = ""
+    var lastName = ""
+    var email = ""
+    
+    var address = ""
+    var postalCode = ""
+    var city = ""
 }
