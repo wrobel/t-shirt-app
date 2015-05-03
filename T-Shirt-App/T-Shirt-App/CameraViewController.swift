@@ -18,13 +18,15 @@ class CameraViewController: UIViewController,
     @IBOutlet var takePictureButton:UIButton!
     
     @IBOutlet var uploadButton:UIButton!
+    @IBOutlet weak var alphaView: UIView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
 
     var image:UIImage?
     
     @IBAction func shootPicture(sender: UIButton) {
         // This should be UIImagePickerControllerSourceType.Camera but does not work with simulator
         // Leave on PhotoLibrary until testing for real
-        pickMediaFromSource(UIImagePickerControllerSourceType.PhotoLibrary)
+        pickMediaFromSource(UIImagePickerControllerSourceType.Camera)
     }
     
     @IBAction func selectImageFromLibrary(sender: UIButton) {
@@ -63,6 +65,9 @@ class CameraViewController: UIViewController,
     
     @IBAction func uploadImage(sender: UIButton) {
         if image != nil {
+            alphaView.hidden = false
+            spinner.hidden = false
+            
             jobUpload.uploadJob(image!)
         }
     }
@@ -73,6 +78,9 @@ class CameraViewController: UIViewController,
         if !UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
             takePictureButton.hidden = true
         }
+        
+        alphaView.hidden = true
+        spinner.hidden = true
         
         assert(self.jobUpload != nil)
     }

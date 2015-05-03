@@ -17,9 +17,30 @@
                     <view key="view" contentMode="scaleToFill" id="ASi-Kz-AwM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QVG-8n-xH5">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <activityIndicatorView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="SfK-7a-SaS">
+                                <rect key="frame" x="189" y="350" width="37" height="37"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QVG-8n-xH5" firstAttribute="width" secondItem="ASi-Kz-AwM" secondAttribute="width" id="AJx-c4-jal"/>
+                            <constraint firstItem="QVG-8n-xH5" firstAttribute="height" secondItem="ASi-Kz-AwM" secondAttribute="height" id="Gcq-cM-6I5"/>
+                            <constraint firstAttribute="centerX" secondItem="QVG-8n-xH5" secondAttribute="centerX" id="Gu3-KF-rbL"/>
+                            <constraint firstAttribute="centerY" secondItem="SfK-7a-SaS" secondAttribute="centerY" id="gcT-z9-ACY"/>
+                            <constraint firstAttribute="centerY" secondItem="QVG-8n-xH5" secondAttribute="centerY" id="p6l-dI-a7P"/>
+                            <constraint firstAttribute="centerX" secondItem="SfK-7a-SaS" secondAttribute="centerX" id="u0S-aI-8VM"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="alphaView" destination="QVG-8n-xH5" id="VAO-iu-Way"/>
+                        <outlet property="spinner" destination="SfK-7a-SaS" id="XS3-7P-FE6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vyL-PS-h6m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -72,6 +93,10 @@
                                     <action selector="selectImageFromLibrary:" destination="lbd-sc-RB4" eventType="touchUpInside" id="H3b-3u-jaU"/>
                                 </connections>
                             </button>
+                            <view hidden="YES" opaque="NO" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VFF-gB-k4I">
+                                <rect key="frame" x="0.0" y="81" width="414" height="495"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1FG-V8-jBx">
                                 <rect key="frame" x="0.0" y="586" width="414" height="30"/>
                                 <constraints>
@@ -84,19 +109,30 @@
                                     <action selector="shootPicture:" destination="lbd-sc-RB4" eventType="touchUpInside" id="yIX-wG-gMh"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="RKX-mw-HCe">
+                                <rect key="frame" x="189" y="310" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="RKX-mw-HCe" firstAttribute="centerY" secondItem="wGP-pp-mzc" secondAttribute="centerY" id="4Re-r1-Bij"/>
+                            <constraint firstItem="wGP-pp-mzc" firstAttribute="centerY" secondItem="VFF-gB-k4I" secondAttribute="centerY" id="5ih-cU-n6f"/>
                             <constraint firstItem="aWG-J4-pIe" firstAttribute="bottom" secondItem="TxO-Y2-MKm" secondAttribute="top" constant="-20" id="Ajb-Pd-lAg"/>
                             <constraint firstItem="N12-8e-SVI" firstAttribute="width" secondItem="X0L-aU-fRV" secondAttribute="width" id="DXl-iL-yoR"/>
                             <constraint firstAttribute="centerX" secondItem="N12-8e-SVI" secondAttribute="centerX" id="G7m-cw-fXV"/>
                             <constraint firstAttribute="centerX" secondItem="TxO-Y2-MKm" secondAttribute="centerX" id="KfB-Dc-UIJ"/>
+                            <constraint firstItem="RKX-mw-HCe" firstAttribute="width" secondItem="wGP-pp-mzc" secondAttribute="width" id="Ldc-hQ-eeC"/>
                             <constraint firstItem="o4V-kJ-hGy" firstAttribute="top" secondItem="wGP-pp-mzc" secondAttribute="bottom" constant="160" id="MxH-19-gKp"/>
                             <constraint firstAttribute="width" secondItem="1FG-V8-jBx" secondAttribute="width" id="WM5-1a-emk"/>
                             <constraint firstItem="aWG-J4-pIe" firstAttribute="centerX" secondItem="X0L-aU-fRV" secondAttribute="centerX" id="Xsu-cK-f1e"/>
                             <constraint firstItem="wGP-pp-mzc" firstAttribute="centerX" secondItem="TxO-Y2-MKm" secondAttribute="centerX" id="abm-2s-yEI"/>
+                            <constraint firstItem="wGP-pp-mzc" firstAttribute="width" secondItem="VFF-gB-k4I" secondAttribute="width" id="ahg-mS-X2k"/>
+                            <constraint firstAttribute="centerX" secondItem="RKX-mw-HCe" secondAttribute="centerX" id="bIZ-3Y-HAl"/>
+                            <constraint firstItem="wGP-pp-mzc" firstAttribute="centerX" secondItem="VFF-gB-k4I" secondAttribute="centerX" id="dw1-bZ-HYU"/>
+                            <constraint firstItem="wGP-pp-mzc" firstAttribute="height" secondItem="VFF-gB-k4I" secondAttribute="height" id="dxZ-HE-Jvp"/>
                             <constraint firstItem="aWG-J4-pIe" firstAttribute="width" secondItem="X0L-aU-fRV" secondAttribute="width" id="g5n-4t-jaD"/>
                             <constraint firstAttribute="centerX" secondItem="1FG-V8-jBx" secondAttribute="centerX" id="jh0-B1-i5g"/>
+                            <constraint firstItem="RKX-mw-HCe" firstAttribute="height" secondItem="wGP-pp-mzc" secondAttribute="height" id="lXd-Yc-xYi"/>
                             <constraint firstItem="TxO-Y2-MKm" firstAttribute="width" secondItem="X0L-aU-fRV" secondAttribute="width" id="p0A-8v-Kqn"/>
                             <constraint firstItem="TxO-Y2-MKm" firstAttribute="bottom" secondItem="o4V-kJ-hGy" secondAttribute="top" constant="-20" id="pMi-tW-vY6"/>
                             <constraint firstItem="wGP-pp-mzc" firstAttribute="width" secondItem="X0L-aU-fRV" secondAttribute="width" id="ty1-Ya-C4j"/>
@@ -104,10 +140,18 @@
                             <constraint firstItem="wGP-pp-mzc" firstAttribute="top" secondItem="N12-8e-SVI" secondAttribute="bottom" constant="20" id="wS7-R8-0F0"/>
                             <constraint firstItem="N12-8e-SVI" firstAttribute="top" secondItem="JSQ-p1-I6n" secondAttribute="bottom" constant="-20" id="yOJ-7v-ge5"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Ldc-hQ-eeC"/>
+                                <exclude reference="lXd-Yc-xYi"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
+                        <outlet property="alphaView" destination="VFF-gB-k4I" id="kJ2-M8-WH8"/>
                         <outlet property="imageView" destination="wGP-pp-mzc" id="HzC-ws-nMv"/>
+                        <outlet property="spinner" destination="RKX-mw-HCe" id="vBb-Az-yd7"/>
                         <outlet property="takePictureButton" destination="1FG-V8-jBx" id="2JG-7C-Vpk"/>
                         <outlet property="uploadButton" destination="TxO-Y2-MKm" id="uZN-AZ-Zl7"/>
                     </connections>

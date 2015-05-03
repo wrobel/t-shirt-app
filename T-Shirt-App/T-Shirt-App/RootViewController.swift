@@ -21,6 +21,9 @@ class RootViewController: UIViewController, JobUploadedDelegate, JobDownloadedDe
     private let currentJobControllerId = "current-job"
     private let resultControllerId = "result"
     
+    @IBOutlet weak var alphaView: UIView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,9 +33,15 @@ class RootViewController: UIViewController, JobUploadedDelegate, JobDownloadedDe
         queueId = jobQueue.loadActiveJob()
 
         if queueId == nil {
+            alphaView.hidden = true
+            spinner.hidden = true
+            
             createCameraController()
             switchViewController(from: nil, to: cameraController)
         } else {
+            alphaView.hidden = false
+            spinner.hidden = false
+            
             let jobDownload = JobDownload(jobDownloadedDelegate: self)
             jobDownload.downloadJob(queueId!)
         }
@@ -46,6 +55,9 @@ class RootViewController: UIViewController, JobUploadedDelegate, JobDownloadedDe
     }
     
     func jobDownloaded(result: UIImage?) {
+        alphaView.hidden = true
+        spinner.hidden = true
+        
         if result != nil {
             createResultController(result!)
             println(result)
